@@ -4,17 +4,40 @@ from torch import nn
 from torch_geometric.nn import GCNConv, SAGEConv, TransformerConv
 from torch_geometric.utils import negative_sampling
 from ogb.linkproppred import PygLinkPropPredDataset, Evaluator
+import logging
+from datetime import datetime
+import os
+
+# Create logs directory if it doesn't exist
+os.makedirs('logs', exist_ok=True)
+
+# Setup logging with timestamp
+timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+log_filename = f'logs/results_{timestamp}.log'
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_filename),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print("Using device:", device)
+logger.info(f"Using device: {device}")
+logger.info(f"Logging results to: {log_filename}")
 
 # -------------------------------
 # Load Dataset (NO LEAKAGE)
 # -------------------------------
+logger.info("Loading dataset ogbl-ddi...")
 dataset = PygLinkPropPredDataset('ogbl-ddi')
 data = dataset[0]
 
 split_edge = dataset.get_edge_split()
+logger.info(f"Dataset loaded: {data.num_nodes} nodes")
 
 train_pos = split_edge['train']['edge'].to(device)
 valid_pos = split_edge['valid']['edge'].to(device)
@@ -120,6 +143,7 @@ def evaluate(model):
         return result['hits@20']
 
 def train_model(name, model, epochs=1000, lr=0.001):
+    logger.info(f"Starting training for {name} (epochs={epochs}, lr={lr})")
     model = model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
@@ -142,20 +166,20 @@ def train_model(name, model, epochs=1000, lr=0.001):
         optimizer.step()
 
         if epoch % 5 == 0:
-            print(f"{name} Epoch {epoch}/{epochs} - Loss = {loss.item():.4f}")
+            logger.info(f"{name} Epoch {epoch}/{epochs} - Loss = {loss.item():.4f}")
 
     hits20 = evaluate(model)
-    print(f"{name}: Hits@20 = {hits20:.4f}")
+    logger.info(f"{name}: Hits@20 = {hits20:.4f}")
     return hits20
 
 gcn_hits  = train_model("GCN", GCN(128))
 sage_hits = train_model("GraphSAGE", GraphSAGE(128))
 gt_hits   = train_model("GraphTransformer", GraphTransformer(128))
 
-print("\n==== FINAL RESULTS ====")
-print(f"GCN Hits@20       = {gcn_hits:.4f}")
-print(f"GraphSAGE Hits@20 = {sage_hits:.4f}")
-print(f"Transformer Hits@20 = {gt_hits:.4f}")
+logger.info("\n==== FINAL RESULTS ====")
+logger.info(f"GCN Hits@20       = {gcn_hits:.4f}")
+logger.info(f"GraphSAGE Hits@20 = {sage_hits:.4f}")
+logger.info(f"Transformer Hits@20 = {gt_hits:.4f}")
 
 @torch.no_grad()
 def debug_evaluator(model):
@@ -179,7 +203,8 @@ def debug_evaluator(model):
         'y_pred_neg': neg_scores,
     })
 
-    print("Returned evaluator keys:", result.keys())
+    logger.info(f"Returned evaluator keys: {result.keys()}")
     return result
 
 debug_evaluator(GCN(32))
+logger.info("Training and evaluation completed successfully!")
