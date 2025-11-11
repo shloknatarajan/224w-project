@@ -114,6 +114,59 @@ logger.info(f"  - PageRank: mean={pagerank_features.mean():.3f}, std={pagerank_f
 
 evaluator = Evaluator(name='ogbl-ddi')
 
+class ExponentialMovingAverage:
+    """
+    Maintains exponential moving average of model parameters.
+    Provides smoother predictions and better generalization.
+
+    Usage:
+        ema = ExponentialMovingAverage(model, decay=0.999)
+
+        # Training loop
+        for epoch in epochs:
+            train_step()
+            ema.update()
+
+            # Evaluation
+            ema.apply_shadow()
+            evaluate()
+            ema.restore()
+    """
+    def __init__(self, model, decay=0.999):
+        self.model = model
+        self.decay = decay
+        self.shadow = {}
+        self.backup = {}
+
+        # Initialize shadow parameters
+        for name, param in model.named_parameters():
+            if param.requires_grad:
+                self.shadow[name] = param.data.clone()
+
+    def update(self):
+        """Update shadow parameters after each training step"""
+        for name, param in self.model.named_parameters():
+            if param.requires_grad:
+                assert name in self.shadow
+                new_average = (1.0 - self.decay) * param.data + self.decay * self.shadow[name]
+                self.shadow[name] = new_average.clone()
+
+    def apply_shadow(self):
+        """Apply shadow parameters to model (for evaluation)"""
+        for name, param in self.model.named_parameters():
+            if param.requires_grad:
+                assert name in self.shadow
+                self.backup[name] = param.data.clone()
+                param.data = self.shadow[name]
+
+    def restore(self):
+        """Restore original model parameters"""
+        for name, param in self.model.named_parameters():
+            if param.requires_grad:
+                assert name in self.backup
+                param.data = self.backup[name]
+        self.backup = {}
+
 class ImprovedEdgeDecoder(nn.Module):
     """Multi-strategy edge decoder for better link prediction"""
     def __init__(self, hidden_dim, dropout=0.5, use_multi_strategy=True):
@@ -520,6 +573,10 @@ def train_model(name, model, epochs=200, lr=0.01, patience=20, eval_every=5, use
         optimizer, mode='max', factor=0.5, patience=15, verbose=True  # More patient scheduler
     )
 
+    # Initialize EMA for smoother predictions
+    ema = ExponentialMovingAverage(model, decay=0.999)
+    logger.info("Initialized EMA with decay=0.999 for stable checkpointing")
+
     best_val_hits = 0
     best_test_hits = 0
     best_epoch = 0
@@ -546,7 +603,7 @@ def train_model(name, model, epochs=200, lr=0.01, patience=20, eval_every=5, use
 
             # Generate negatives for this micro-batch
             num_negatives = pos_batch.size(0)
-            warmup_epochs = 10  # Shorter warmup for hard negatives
+            warmup_epochs = 50  # Longer warmup for stability (increased from 10)
             if use_hard_negatives and epoch > warmup_epochs:
                 num_hard = int(num_negatives * hard_neg_ratio)
                 num_random = num_negatives - num_hard
@@ -623,13 +680,19 @@ def train_model(name, model, epochs=200, lr=0.01, patience=20, eval_every=5, use
         optimizer.step()
         optimizer.zero_grad()
 
+        # Update EMA after each training step
+        ema.update()
+
         # Use total accumulated loss for logging
         loss_value = total_loss
 
         # EARLY STOPPING: Evaluate periodically using official negatives
         if epoch % eval_every == 0 or epoch == 1:
+            # Evaluate using EMA weights for more stable predictions
+            ema.apply_shadow()
             val_hits = evaluate(model, valid_pos, valid_neg, batch_size=eval_batch_size)
             test_hits = evaluate(model, test_pos, test_neg, batch_size=eval_batch_size)
+            ema.restore()
 
             # Free up memory after evaluation
             torch.cuda.empty_cache()
@@ -679,8 +742,8 @@ LEARNING_RATE = 0.003  # REDUCED learning rate for stable training
 WEIGHT_DECAY = 5e-5  # REDUCED weight decay (rich features reduce overfitting)
 EDGE_DROPOUT = 0.15  # REDUCED edge dropout (rich features already provide diversity)
 USE_HARD_NEGATIVES = True  # ENABLED for better generalization
-HARD_NEG_RATIO = 0.15  # FURTHER REDUCED for memory efficiency
-HARD_NEG_WARMUP = 20  # Longer warmup for stability
+HARD_NEG_RATIO = 0.05  # REDUCED from 0.15 to 0.05 for training stability
+HARD_NEG_WARMUP = 50  # Increased from 20 to 50 for gradual introduction
 NUM_STRUCTURAL_FEATURES = 6  # Number of structural features we compute
 USE_MULTI_STRATEGY = False  # DISABLED to save memory (single strategy is more memory efficient)
 
