@@ -98,20 +98,6 @@ See `pixi.toml` for dependency management.
 
 ## Usage
 
-### Quick Test (Recommended First)
-
-Test the critical fixes with a 20-epoch run:
-
-```bash
-python test_fixes.py
-```
-
-This will verify that:
-- Learnable embeddings are working
-- Loss decreases steadily
-- GPU is being utilized (if available)
-- All improvements are functioning correctly
-
 ### Full Training
 
 Run the main script (trains all 3 models with early stopping):
@@ -136,13 +122,6 @@ Results will be:
 - Printed to the console with validation and test metrics
 - Logged to `logs/results_YYYYMMDD_HHMMSS.log`
 
-### Expected Performance
-
-After the critical fixes:
-- **Training Time**: ~10-15 minutes on GPU (vs 9+ hours on CPU before)
-- **Loss**: Should decrease from ~1.4 to ~0.5-0.8
-- **Hits@20**: Expected range 0.30-0.70+ (vs ~0.10-0.20 before)
-
 ## Output
 
 The script outputs:
@@ -156,52 +135,4 @@ GCN Hits@20       = X.XXXX
 GraphSAGE Hits@20 = X.XXXX
 Transformer Hits@20 = X.XXXX
 ```
-
-## Architecture Details
-
-All models follow a similar architecture:
-1. **Encoding**: Two-layer GNN that produces node embeddings
-2. **Decoding**: Dot product between source and destination node embeddings
-3. **Training**: Binary classification with negative sampling
-
-## Recent Improvements (Critical Fixes)
-
-### What Was Fixed
-
-1. **Learnable Embeddings** ✅
-   - **Before**: Random features generated on every forward pass → no stable signal to learn
-   - **After**: Trainable `nn.Embedding` layer → stable, learnable representations
-
-2. **Loss Function** ✅
-   - **Before**: Manual BCE with sigmoid → numerical instability
-   - **After**: `F.binary_cross_entropy_with_logits` → more stable gradients
-
-3. **Early Stopping** ✅
-   - **Before**: Blind training for 1000 epochs
-   - **After**: Validation-based early stopping with patience=20
-
-4. **Regularization** ✅
-   - Added batch normalization for training stability
-   - Added dropout (p=0.3) to prevent overfitting
-   - Added gradient clipping for stability
-
-5. **Optimizer** ✅
-   - **Before**: Adam
-   - **After**: AdamW with weight decay
-
-### Impact
-
-| Metric | Before | After |
-|--------|--------|-------|
-| Training Time | 9.4 hours (CPU) | 10-15 mins (GPU) |
-| Loss Stability | Unstable (1.3-3.5) | Stable decrease |
-| Hits@20 | ~0.10-0.20 | 0.30-0.70+ |
-| Convergence | No convergence | Clear convergence |
-
-## Notes
-
-- The graph structure uses only training edges to prevent data leakage
-- Node features are learned via embedding layer (not random)
-- Evaluation uses batched negative sampling to avoid out-of-memory issues
-- See `IMPROVEMENT_PLAN.md` for detailed explanation of all fixes
 
