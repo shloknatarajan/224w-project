@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 from torch_geometric.nn import GCNConv, SAGEConv, TransformerConv
-from torch_geometric.utils import negative_sampling
+from torch_geometric.utils import negative_sampling, dropout_edge
 from ogb.linkproppred import PygLinkPropPredDataset, Evaluator
 import logging
 from datetime import datetime
@@ -41,7 +41,12 @@ logger.info(f"Dataset loaded: {data.num_nodes} nodes")
 
 train_pos = split_edge['train']['edge'].to(device)
 valid_pos = split_edge['valid']['edge'].to(device)
+valid_neg = split_edge['valid']['edge_neg'].to(device)  # Official negatives!
 test_pos  = split_edge['test']['edge'].to(device)
+test_neg  = split_edge['test']['edge_neg'].to(device)   # Official negatives!
+
+logger.info(f"Train pos edges: {train_pos.size(0)}, Valid pos: {valid_pos.size(0)}, Test pos: {test_pos.size(0)}")
+logger.info(f"Valid neg edges: {valid_neg.size(0)}, Test neg: {test_neg.size(0)}")
 
 num_nodes = data.num_nodes
 
@@ -53,15 +58,12 @@ evaluator = Evaluator(name='ogbl-ddi')
 class BaseModel(nn.Module):
     def __init__(self, hidden_dim):
         super().__init__()
-        # MLP decoder for better link prediction
+        # Simplified 2-layer decoder with higher dropout to reduce overfitting
         self.decoder = nn.Sequential(
             nn.Linear(hidden_dim * 2, hidden_dim),
             nn.ReLU(),
-            nn.Dropout(0.2),
-            nn.Linear(hidden_dim, hidden_dim // 2),
-            nn.ReLU(),
-            nn.Dropout(0.2),
-            nn.Linear(hidden_dim // 2, 1)
+            nn.Dropout(0.5),  # Increased from 0.2
+            nn.Linear(hidden_dim, 1)
         )
 
     def decode(self, z, edge):
@@ -71,7 +73,7 @@ class BaseModel(nn.Module):
         return self.decoder(edge_emb).squeeze()
 
 class GCN(BaseModel):
-    def __init__(self, num_nodes, hidden_dim, num_layers=3, dropout=0.3):
+    def __init__(self, num_nodes, hidden_dim, num_layers=3, dropout=0.5):
         super().__init__(hidden_dim)
         self.hidden_dim = hidden_dim
         self.dropout = dropout
@@ -91,6 +93,10 @@ class GCN(BaseModel):
     def encode(self, edge_index):
         x = self.emb.weight
 
+        # Apply edge dropout during training for better regularization
+        if self.training:
+            edge_index, _ = dropout_edge(edge_index, p=0.2, training=self.training)
+
         for i, (conv, bn) in enumerate(zip(self.convs, self.bns)):
             x_prev = x
             x = conv(x, edge_index)
@@ -104,7 +110,7 @@ class GCN(BaseModel):
         return x
 
 class GraphSAGE(BaseModel):
-    def __init__(self, num_nodes, hidden_dim, num_layers=3, dropout=0.3):
+    def __init__(self, num_nodes, hidden_dim, num_layers=3, dropout=0.5):
         super().__init__(hidden_dim)
         self.hidden_dim = hidden_dim
         self.dropout = dropout
@@ -137,7 +143,7 @@ class GraphSAGE(BaseModel):
         return x
 
 class GraphTransformer(BaseModel):
-    def __init__(self, num_nodes, hidden_dim, num_layers=3, heads=4, dropout=0.3):
+    def __init__(self, num_nodes, hidden_dim, num_layers=3, heads=4, dropout=0.5):
         super().__init__(hidden_dim)
         self.hidden_dim = hidden_dim
         self.dropout = dropout
@@ -169,7 +175,7 @@ class GraphTransformer(BaseModel):
 
         return x
 
-def get_loss(model, edge_index, pos_edges):
+def get_loss(model, edge_index, pos_edges, emb_reg_weight=0.001):
     z = model.encode(edge_index)
     pos_score = model.decode(z, pos_edges)
 
@@ -181,39 +187,37 @@ def get_loss(model, edge_index, pos_edges):
 
     neg_score = model.decode(z, neg_edges)
 
-    # Margin ranking hinge loss
+    # BCE loss (more numerically stable)
     loss = -torch.log(torch.sigmoid(pos_score)).mean() - torch.log(1 - torch.sigmoid(neg_score)).mean()
+
+    # Add L2 regularization on embeddings to reduce overfitting
+    emb_reg_loss = emb_reg_weight * torch.norm(model.emb.weight, p=2)
+    loss = loss + emb_reg_loss
+
     return loss
 
-def evaluate(model, pos_edges, neg_edges=None):
-    """Evaluate model on given positive (and optionally negative) edges."""
+def evaluate(model, pos_edges, neg_edges):
+    """Evaluate model using official OGB negative edges for consistent evaluation."""
     model.eval()
     with torch.no_grad():
         z = model.encode(data.edge_index)
 
-        # Positive scores
-        pos_scores = model.decode(z, pos_edges).view(-1).cpu()
+        # Positive scores - batch process to avoid OOM
+        pos_scores_list = []
+        batch_size = 100000
+        for i in range(0, pos_edges.size(0), batch_size):
+            chunk = pos_edges[i:i+batch_size]
+            pos_scores_list.append(model.decode(z, chunk).view(-1).cpu())
+        pos_scores = torch.cat(pos_scores_list)
 
-        # Use provided negatives or sample new ones
-        if neg_edges is None:
-            neg_test = negative_sampling(
-                edge_index=data.edge_index.cpu(),
-                num_nodes=num_nodes,
-                num_neg_samples=pos_edges.size(0)
-            )
-            neg_test = neg_test.t().to(device)
-        else:
-            neg_test = neg_edges
-
-        # Batch processing to avoid OOM
+        # Negative scores - batch process to avoid OOM
         neg_scores_list = []
-        batch_size = 300000  # Larger batch size for faster evaluation
-        for i in range(0, neg_test.size(0), batch_size):
-            chunk = neg_test[i:i+batch_size]
+        for i in range(0, neg_edges.size(0), batch_size):
+            chunk = neg_edges[i:i+batch_size]
             neg_scores_list.append(model.decode(z, chunk).view(-1).cpu())
-
         neg_scores = torch.cat(neg_scores_list)
 
+        # Use OGB evaluator with official negative samples
         result = evaluator.eval({
             'y_pred_pos': pos_scores,
             'y_pred_neg': neg_scores,
@@ -293,10 +297,10 @@ def train_model(name, model, epochs=200, lr=0.01, patience=20, eval_every=5):
         del z, neg_samples, pos_out, neg_out, pos_loss, neg_loss
         torch.cuda.empty_cache()
 
-        # EARLY STOPPING: Evaluate periodically
+        # EARLY STOPPING: Evaluate periodically using official negatives
         if epoch % eval_every == 0 or epoch == 1:
-            val_hits = evaluate(model, valid_pos)
-            test_hits = evaluate(model, test_pos)
+            val_hits = evaluate(model, valid_pos, valid_neg)
+            test_hits = evaluate(model, test_pos, test_neg)
             
             # Free up memory after evaluation
             torch.cuda.empty_cache()
@@ -331,13 +335,12 @@ def train_model(name, model, epochs=200, lr=0.01, patience=20, eval_every=5):
     logger.info(f"{name} FINAL: Best Val Hits@20 = {best_val_hits:.4f} | Test Hits@20 = {best_test_hits:.4f} (at epoch {best_epoch})")
     return best_val_hits, best_test_hits
 
-# Train all three models with improved architecture
-# Reduced dimensions for better memory efficiency and potentially better generalization
-HIDDEN_DIM = 128  # Reduced from 256 for memory and to prevent overfitting
-NUM_LAYERS = 2    # Reduced from 3 for faster training and better generalization
-DROPOUT = 0.3
-EPOCHS = 300      # More epochs since each is faster now
-PATIENCE = 30     # More patience for early stopping
+# OPTIMIZED FOR GCN: Focusing on best-performing model
+HIDDEN_DIM = 256  # Increased from 128 for more capacity
+NUM_LAYERS = 4    # Increased from 3 for deeper multi-hop learning
+DROPOUT = 0.4     # Slightly reduced from 0.5 to allow more capacity while preventing overfitting
+EPOCHS = 500      # More epochs since model was still improving at 300
+PATIENCE = 40     # Increased patience for deeper model
 
 logger.info("=" * 60)
 logger.info(f"Training GCN Model (hidden_dim={HIDDEN_DIM}, layers={NUM_LAYERS})")
@@ -350,36 +353,38 @@ gcn_val, gcn_test = train_model(
     patience=PATIENCE
 )
 
-logger.info("\n" + "=" * 60)
-logger.info(f"Training GraphSAGE Model (hidden_dim={HIDDEN_DIM}, layers={NUM_LAYERS})")
-logger.info("=" * 60)
-sage_val, sage_test = train_model(
-    "GraphSAGE",
-    GraphSAGE(num_nodes, HIDDEN_DIM, num_layers=NUM_LAYERS, dropout=DROPOUT),
-    epochs=EPOCHS,
-    lr=0.01,
-    patience=PATIENCE
-)
-
-logger.info("\n" + "=" * 60)
-logger.info(f"Training GraphTransformer Model (hidden_dim={HIDDEN_DIM}, layers={NUM_LAYERS})")
-logger.info("=" * 60)
-gt_val, gt_test = train_model(
-    "GraphTransformer",
-    GraphTransformer(num_nodes, HIDDEN_DIM, num_layers=NUM_LAYERS, heads=4, dropout=DROPOUT),
-    epochs=EPOCHS,
-    lr=0.005,  # Lower LR for transformer
-    patience=PATIENCE
-)
+# COMMENTED OUT: Focusing on GCN only for optimization
+# logger.info("\n" + "=" * 60)
+# logger.info(f"Training GraphSAGE Model (hidden_dim={HIDDEN_DIM}, layers={NUM_LAYERS})")
+# logger.info("=" * 60)
+# sage_val, sage_test = train_model(
+#     "GraphSAGE",
+#     GraphSAGE(num_nodes, HIDDEN_DIM, num_layers=NUM_LAYERS, dropout=DROPOUT),
+#     epochs=EPOCHS,
+#     lr=0.01,
+#     patience=PATIENCE
+# )
+#
+# logger.info("\n" + "=" * 60)
+# logger.info(f"Training GraphTransformer Model (hidden_dim={HIDDEN_DIM}, layers={NUM_LAYERS})")
+# logger.info("=" * 60)
+# gt_val, gt_test = train_model(
+#     "GraphTransformer",
+#     GraphTransformer(num_nodes, HIDDEN_DIM, num_layers=NUM_LAYERS, heads=4, dropout=DROPOUT),
+#     epochs=EPOCHS,
+#     lr=0.005,  # Lower LR for transformer
+#     patience=PATIENCE
+# )
 
 logger.info("\n" + "=" * 80)
-logger.info("FINAL RESULTS SUMMARY")
+logger.info("FINAL RESULTS - OPTIMIZED GCN MODEL")
 logger.info("=" * 80)
-logger.info(f"{'Model':<20} {'Val Hits@20':>15} {'Test Hits@20':>15}")
-logger.info("-" * 80)
-logger.info(f"{'GCN':<20} {gcn_val:>15.4f} {gcn_test:>15.4f}")
-logger.info(f"{'GraphSAGE':<20} {sage_val:>15.4f} {sage_test:>15.4f}")
-logger.info(f"{'GraphTransformer':<20} {gt_val:>15.4f} {gt_test:>15.4f}")
+logger.info(f"Model: GCN")
+logger.info(f"  Hidden Dimension: {HIDDEN_DIM}")
+logger.info(f"  Number of Layers: {NUM_LAYERS}")
+logger.info(f"  Dropout: {DROPOUT}")
+logger.info(f"  Validation Hits@20: {gcn_val:.4f}")
+logger.info(f"  Test Hits@20: {gcn_test:.4f}")
 logger.info("=" * 80)
 
 logger.info("\n" + "=" * 80)

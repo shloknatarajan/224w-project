@@ -1,0 +1,13 @@
+2025-11-11 02:53:53,383 - Using device: cuda
+2025-11-11 02:53:53,383 - Logging results to: logs/results_20251111_025353.log
+2025-11-11 02:53:53,383 - Loading dataset ogbl-ddi...
+2025-11-11 02:53:53,468 - Dataset loaded: 4267 nodes
+2025-11-11 02:53:53,628 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 02:53:53,628 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 02:53:53,644 - ============================================================
+2025-11-11 02:53:53,644 - Training GCN Model (hidden_dim=256, layers=4)
+2025-11-11 02:53:53,644 - ============================================================
+2025-11-11 02:53:53,695 - Starting training for GCN (epochs=500, lr=0.01, patience=40)
+2025-11-11 02:53:55,818 - GCN Epoch 0001/500 | Loss: 1.4993 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0000 (epoch 1) | LR: 0.010000
+2025-11-11 02:54:02,463 - GCN Epoch 0005/500 | Loss: 2.6089 | Val Hits@20: 0.0003 | Test Hits@20: 0.0005 | Best Val: 0.0003 (epoch 5) | LR: 0.010000
+2025-11-11 02:54:10,623 - GCN Epoch 0010/500 | Loss: 1.0209 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0003 (epoch 5) | LR: 0.010000

@@ -1,0 +1,217 @@
+2025-11-11 02:21:37,060 - Using device: cuda
+2025-11-11 02:21:37,060 - Logging results to: logs/results_20251111_022137.log
+2025-11-11 02:21:37,060 - Loading dataset ogbl-ddi...
+2025-11-11 02:21:37,146 - Dataset loaded: 4267 nodes
+2025-11-11 02:21:37,310 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 02:21:37,311 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 02:21:37,326 - ============================================================
+2025-11-11 02:21:37,326 - Training GCN Model (hidden_dim=128, layers=3)
+2025-11-11 02:21:37,326 - ============================================================
+2025-11-11 02:21:37,374 - Starting training for GCN (epochs=300, lr=0.01, patience=30)
+2025-11-11 02:21:39,442 - GCN Epoch 0001/300 | Loss: 1.4385 | Val Hits@20: 0.0001 | Test Hits@20: 0.0001 | Best Val: 0.0001 (epoch 1) | LR: 0.010000
+2025-11-11 02:21:46,035 - GCN Epoch 0005/300 | Loss: 1.1105 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0001 (epoch 1) | LR: 0.010000
+2025-11-11 02:21:54,067 - GCN Epoch 0010/300 | Loss: 0.8444 | Val Hits@20: 0.0004 | Test Hits@20: 0.0001 | Best Val: 0.0004 (epoch 10) | LR: 0.010000
+2025-11-11 02:22:02,097 - GCN Epoch 0015/300 | Loss: 0.7944 | Val Hits@20: 0.0057 | Test Hits@20: 0.0013 | Best Val: 0.0057 (epoch 15) | LR: 0.010000
+2025-11-11 02:22:10,076 - GCN Epoch 0020/300 | Loss: 0.7313 | Val Hits@20: 0.0130 | Test Hits@20: 0.0084 | Best Val: 0.0130 (epoch 20) | LR: 0.010000
+2025-11-11 02:22:18,236 - GCN Epoch 0025/300 | Loss: 0.6933 | Val Hits@20: 0.0245 | Test Hits@20: 0.0126 | Best Val: 0.0245 (epoch 25) | LR: 0.010000
+2025-11-11 02:22:26,347 - GCN Epoch 0030/300 | Loss: 0.6632 | Val Hits@20: 0.0373 | Test Hits@20: 0.0224 | Best Val: 0.0373 (epoch 30) | LR: 0.010000
+2025-11-11 02:22:34,432 - GCN Epoch 0035/300 | Loss: 0.6388 | Val Hits@20: 0.0398 | Test Hits@20: 0.0213 | Best Val: 0.0398 (epoch 35) | LR: 0.010000
+2025-11-11 02:22:42,467 - GCN Epoch 0040/300 | Loss: 0.6172 | Val Hits@20: 0.0333 | Test Hits@20: 0.0230 | Best Val: 0.0398 (epoch 35) | LR: 0.010000
+2025-11-11 02:22:50,533 - GCN Epoch 0045/300 | Loss: 0.6002 | Val Hits@20: 0.0359 | Test Hits@20: 0.0232 | Best Val: 0.0398 (epoch 35) | LR: 0.010000
+2025-11-11 02:22:58,765 - GCN Epoch 0050/300 | Loss: 0.5812 | Val Hits@20: 0.0272 | Test Hits@20: 0.0245 | Best Val: 0.0398 (epoch 35) | LR: 0.010000
+2025-11-11 02:23:06,954 - GCN Epoch 0055/300 | Loss: 0.5611 | Val Hits@20: 0.0305 | Test Hits@20: 0.0290 | Best Val: 0.0398 (epoch 35) | LR: 0.010000
+2025-11-11 02:23:15,130 - GCN Epoch 0060/300 | Loss: 0.5451 | Val Hits@20: 0.0351 | Test Hits@20: 0.0279 | Best Val: 0.0398 (epoch 35) | LR: 0.010000
+2025-11-11 02:23:23,275 - GCN Epoch 0065/300 | Loss: 0.5340 | Val Hits@20: 0.0351 | Test Hits@20: 0.0312 | Best Val: 0.0398 (epoch 35) | LR: 0.005000
+2025-11-11 02:23:31,345 - GCN Epoch 0070/300 | Loss: 0.5263 | Val Hits@20: 0.0422 | Test Hits@20: 0.0360 | Best Val: 0.0422 (epoch 70) | LR: 0.005000
+2025-11-11 02:23:39,397 - GCN Epoch 0075/300 | Loss: 0.5191 | Val Hits@20: 0.0386 | Test Hits@20: 0.0350 | Best Val: 0.0422 (epoch 70) | LR: 0.005000
+2025-11-11 02:23:47,457 - GCN Epoch 0080/300 | Loss: 0.5144 | Val Hits@20: 0.0454 | Test Hits@20: 0.0356 | Best Val: 0.0454 (epoch 80) | LR: 0.005000
+2025-11-11 02:23:55,471 - GCN Epoch 0085/300 | Loss: 0.5087 | Val Hits@20: 0.0471 | Test Hits@20: 0.0396 | Best Val: 0.0471 (epoch 85) | LR: 0.005000
+2025-11-11 02:24:03,534 - GCN Epoch 0090/300 | Loss: 0.5080 | Val Hits@20: 0.0567 | Test Hits@20: 0.0472 | Best Val: 0.0567 (epoch 90) | LR: 0.005000
+2025-11-11 02:24:11,512 - GCN Epoch 0095/300 | Loss: 0.5051 | Val Hits@20: 0.0501 | Test Hits@20: 0.0471 | Best Val: 0.0567 (epoch 90) | LR: 0.005000
+2025-11-11 02:24:19,631 - GCN Epoch 0100/300 | Loss: 0.5001 | Val Hits@20: 0.0551 | Test Hits@20: 0.0489 | Best Val: 0.0567 (epoch 90) | LR: 0.005000
+2025-11-11 02:24:27,827 - GCN Epoch 0105/300 | Loss: 0.4923 | Val Hits@20: 0.0641 | Test Hits@20: 0.0564 | Best Val: 0.0641 (epoch 105) | LR: 0.005000
+2025-11-11 02:24:35,369 - GCN Epoch 0110/300 | Loss: 0.4932 | Val Hits@20: 0.0574 | Test Hits@20: 0.0563 | Best Val: 0.0641 (epoch 105) | LR: 0.005000
+2025-11-11 02:24:42,722 - GCN Epoch 0115/300 | Loss: 0.4891 | Val Hits@20: 0.0635 | Test Hits@20: 0.0596 | Best Val: 0.0641 (epoch 105) | LR: 0.005000
+2025-11-11 02:24:50,126 - GCN Epoch 0120/300 | Loss: 0.4853 | Val Hits@20: 0.0694 | Test Hits@20: 0.0645 | Best Val: 0.0694 (epoch 120) | LR: 0.005000
+2025-11-11 02:24:57,450 - GCN Epoch 0125/300 | Loss: 0.4821 | Val Hits@20: 0.0979 | Test Hits@20: 0.0732 | Best Val: 0.0979 (epoch 125) | LR: 0.005000
+2025-11-11 02:25:04,794 - GCN Epoch 0130/300 | Loss: 0.4771 | Val Hits@20: 0.1332 | Test Hits@20: 0.0834 | Best Val: 0.1332 (epoch 130) | LR: 0.005000
+2025-11-11 02:25:12,132 - GCN Epoch 0135/300 | Loss: 0.4744 | Val Hits@20: 0.0853 | Test Hits@20: 0.0747 | Best Val: 0.1332 (epoch 130) | LR: 0.005000
+2025-11-11 02:25:19,500 - GCN Epoch 0140/300 | Loss: 0.4727 | Val Hits@20: 0.1006 | Test Hits@20: 0.0878 | Best Val: 0.1332 (epoch 130) | LR: 0.005000
+2025-11-11 02:25:26,886 - GCN Epoch 0145/300 | Loss: 0.4675 | Val Hits@20: 0.1075 | Test Hits@20: 0.0739 | Best Val: 0.1332 (epoch 130) | LR: 0.005000
+2025-11-11 02:25:34,276 - GCN Epoch 0150/300 | Loss: 0.4652 | Val Hits@20: 0.1244 | Test Hits@20: 0.0807 | Best Val: 0.1332 (epoch 130) | LR: 0.005000
+2025-11-11 02:25:41,688 - GCN Epoch 0155/300 | Loss: 0.4624 | Val Hits@20: 0.1149 | Test Hits@20: 0.0773 | Best Val: 0.1332 (epoch 130) | LR: 0.005000
+2025-11-11 02:25:49,075 - GCN Epoch 0160/300 | Loss: 0.4581 | Val Hits@20: 0.1193 | Test Hits@20: 0.0751 | Best Val: 0.1332 (epoch 130) | LR: 0.002500
+2025-11-11 02:25:56,493 - GCN Epoch 0165/300 | Loss: 0.4564 | Val Hits@20: 0.1126 | Test Hits@20: 0.0773 | Best Val: 0.1332 (epoch 130) | LR: 0.002500
+2025-11-11 02:26:03,881 - GCN Epoch 0170/300 | Loss: 0.4564 | Val Hits@20: 0.1029 | Test Hits@20: 0.0641 | Best Val: 0.1332 (epoch 130) | LR: 0.002500
+2025-11-11 02:26:11,198 - GCN Epoch 0175/300 | Loss: 0.4534 | Val Hits@20: 0.1329 | Test Hits@20: 0.0794 | Best Val: 0.1332 (epoch 130) | LR: 0.002500
+2025-11-11 02:26:18,563 - GCN Epoch 0180/300 | Loss: 0.4526 | Val Hits@20: 0.1381 | Test Hits@20: 0.0769 | Best Val: 0.1381 (epoch 180) | LR: 0.002500
+2025-11-11 02:26:25,929 - GCN Epoch 0185/300 | Loss: 0.4503 | Val Hits@20: 0.1282 | Test Hits@20: 0.0780 | Best Val: 0.1381 (epoch 180) | LR: 0.002500
+2025-11-11 02:26:33,322 - GCN Epoch 0190/300 | Loss: 0.4482 | Val Hits@20: 0.1379 | Test Hits@20: 0.0842 | Best Val: 0.1381 (epoch 180) | LR: 0.002500
+2025-11-11 02:26:40,652 - GCN Epoch 0195/300 | Loss: 0.4495 | Val Hits@20: 0.1225 | Test Hits@20: 0.0769 | Best Val: 0.1381 (epoch 180) | LR: 0.002500
+2025-11-11 02:26:48,212 - GCN Epoch 0200/300 | Loss: 0.4458 | Val Hits@20: 0.1254 | Test Hits@20: 0.0759 | Best Val: 0.1381 (epoch 180) | LR: 0.002500
+2025-11-11 02:26:56,516 - GCN Epoch 0205/300 | Loss: 0.4438 | Val Hits@20: 0.1415 | Test Hits@20: 0.0834 | Best Val: 0.1415 (epoch 205) | LR: 0.002500
+2025-11-11 02:27:04,645 - GCN Epoch 0210/300 | Loss: 0.4443 | Val Hits@20: 0.1568 | Test Hits@20: 0.0888 | Best Val: 0.1568 (epoch 210) | LR: 0.002500
+2025-11-11 02:27:12,804 - GCN Epoch 0215/300 | Loss: 0.4421 | Val Hits@20: 0.1371 | Test Hits@20: 0.0833 | Best Val: 0.1568 (epoch 210) | LR: 0.002500
+2025-11-11 02:27:20,775 - GCN Epoch 0220/300 | Loss: 0.4416 | Val Hits@20: 0.1126 | Test Hits@20: 0.0782 | Best Val: 0.1568 (epoch 210) | LR: 0.002500
+2025-11-11 02:27:28,937 - GCN Epoch 0225/300 | Loss: 0.4410 | Val Hits@20: 0.1496 | Test Hits@20: 0.0923 | Best Val: 0.1568 (epoch 210) | LR: 0.002500
+2025-11-11 02:27:36,967 - GCN Epoch 0230/300 | Loss: 0.4400 | Val Hits@20: 0.1432 | Test Hits@20: 0.0921 | Best Val: 0.1568 (epoch 210) | LR: 0.002500
+2025-11-11 02:27:44,987 - GCN Epoch 0235/300 | Loss: 0.4362 | Val Hits@20: 0.1269 | Test Hits@20: 0.0840 | Best Val: 0.1568 (epoch 210) | LR: 0.002500
+2025-11-11 02:27:52,956 - GCN Epoch 0240/300 | Loss: 0.4376 | Val Hits@20: 0.1389 | Test Hits@20: 0.0841 | Best Val: 0.1568 (epoch 210) | LR: 0.001250
+2025-11-11 02:28:00,976 - GCN Epoch 0245/300 | Loss: 0.4327 | Val Hits@20: 0.1331 | Test Hits@20: 0.0866 | Best Val: 0.1568 (epoch 210) | LR: 0.001250
+2025-11-11 02:28:09,039 - GCN Epoch 0250/300 | Loss: 0.4355 | Val Hits@20: 0.1477 | Test Hits@20: 0.0776 | Best Val: 0.1568 (epoch 210) | LR: 0.001250
+2025-11-11 02:28:17,155 - GCN Epoch 0255/300 | Loss: 0.4335 | Val Hits@20: 0.1439 | Test Hits@20: 0.0939 | Best Val: 0.1568 (epoch 210) | LR: 0.001250
+2025-11-11 02:28:25,297 - GCN Epoch 0260/300 | Loss: 0.4336 | Val Hits@20: 0.1391 | Test Hits@20: 0.0943 | Best Val: 0.1568 (epoch 210) | LR: 0.001250
+2025-11-11 02:28:33,375 - GCN Epoch 0265/300 | Loss: 0.4318 | Val Hits@20: 0.1647 | Test Hits@20: 0.0935 | Best Val: 0.1647 (epoch 265) | LR: 0.001250
+2025-11-11 02:28:41,497 - GCN Epoch 0270/300 | Loss: 0.4328 | Val Hits@20: 0.1504 | Test Hits@20: 0.0898 | Best Val: 0.1647 (epoch 265) | LR: 0.001250
+2025-11-11 02:28:49,593 - GCN Epoch 0275/300 | Loss: 0.4303 | Val Hits@20: 0.1519 | Test Hits@20: 0.1011 | Best Val: 0.1647 (epoch 265) | LR: 0.001250
+2025-11-11 02:28:57,657 - GCN Epoch 0280/300 | Loss: 0.4303 | Val Hits@20: 0.1542 | Test Hits@20: 0.0953 | Best Val: 0.1647 (epoch 265) | LR: 0.001250
+2025-11-11 02:29:05,746 - GCN Epoch 0285/300 | Loss: 0.4309 | Val Hits@20: 0.1382 | Test Hits@20: 0.0926 | Best Val: 0.1647 (epoch 265) | LR: 0.001250
+2025-11-11 02:29:13,861 - GCN Epoch 0290/300 | Loss: 0.4284 | Val Hits@20: 0.1447 | Test Hits@20: 0.0941 | Best Val: 0.1647 (epoch 265) | LR: 0.001250
+2025-11-11 02:29:21,941 - GCN Epoch 0295/300 | Loss: 0.4297 | Val Hits@20: 0.1465 | Test Hits@20: 0.0911 | Best Val: 0.1647 (epoch 265) | LR: 0.000625
+2025-11-11 02:29:30,065 - GCN Epoch 0300/300 | Loss: 0.4292 | Val Hits@20: 0.1591 | Test Hits@20: 0.0984 | Best Val: 0.1647 (epoch 265) | LR: 0.000625
+2025-11-11 02:29:30,065 - GCN FINAL: Best Val Hits@20 = 0.1647 | Test Hits@20 = 0.0935 (at epoch 265)
+2025-11-11 02:29:30,066 - 
+============================================================
+2025-11-11 02:29:30,066 - Training GraphSAGE Model (hidden_dim=128, layers=3)
+2025-11-11 02:29:30,066 - ============================================================
+2025-11-11 02:29:30,107 - Starting training for GraphSAGE (epochs=300, lr=0.01, patience=30)
+2025-11-11 02:29:31,751 - GraphSAGE Epoch 0001/300 | Loss: 1.4927 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0000 (epoch 1) | LR: 0.010000
+2025-11-11 02:29:38,145 - GraphSAGE Epoch 0005/300 | Loss: 1.5349 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0000 (epoch 1) | LR: 0.010000
+2025-11-11 02:29:46,156 - GraphSAGE Epoch 0010/300 | Loss: 1.3468 | Val Hits@20: 0.0041 | Test Hits@20: 0.0024 | Best Val: 0.0041 (epoch 10) | LR: 0.010000
+2025-11-11 02:29:54,099 - GraphSAGE Epoch 0015/300 | Loss: 1.2578 | Val Hits@20: 0.0066 | Test Hits@20: 0.0051 | Best Val: 0.0066 (epoch 15) | LR: 0.010000
+2025-11-11 02:30:02,041 - GraphSAGE Epoch 0020/300 | Loss: 1.1290 | Val Hits@20: 0.0065 | Test Hits@20: 0.0068 | Best Val: 0.0066 (epoch 15) | LR: 0.010000
+2025-11-11 02:30:10,010 - GraphSAGE Epoch 0025/300 | Loss: 1.0887 | Val Hits@20: 0.0068 | Test Hits@20: 0.0027 | Best Val: 0.0068 (epoch 25) | LR: 0.010000
+2025-11-11 02:30:17,961 - GraphSAGE Epoch 0030/300 | Loss: 1.0656 | Val Hits@20: 0.0100 | Test Hits@20: 0.0062 | Best Val: 0.0100 (epoch 30) | LR: 0.010000
+2025-11-11 02:30:26,018 - GraphSAGE Epoch 0035/300 | Loss: 1.0540 | Val Hits@20: 0.0131 | Test Hits@20: 0.0090 | Best Val: 0.0131 (epoch 35) | LR: 0.010000
+2025-11-11 02:30:34,052 - GraphSAGE Epoch 0040/300 | Loss: 1.0453 | Val Hits@20: 0.0151 | Test Hits@20: 0.0107 | Best Val: 0.0151 (epoch 40) | LR: 0.010000
+2025-11-11 02:30:42,032 - GraphSAGE Epoch 0045/300 | Loss: 1.0396 | Val Hits@20: 0.0129 | Test Hits@20: 0.0093 | Best Val: 0.0151 (epoch 40) | LR: 0.010000
+2025-11-11 02:30:50,098 - GraphSAGE Epoch 0050/300 | Loss: 1.0357 | Val Hits@20: 0.0142 | Test Hits@20: 0.0088 | Best Val: 0.0151 (epoch 40) | LR: 0.010000
+2025-11-11 02:30:58,105 - GraphSAGE Epoch 0055/300 | Loss: 1.0325 | Val Hits@20: 0.0133 | Test Hits@20: 0.0076 | Best Val: 0.0151 (epoch 40) | LR: 0.010000
+2025-11-11 02:31:06,112 - GraphSAGE Epoch 0060/300 | Loss: 1.0313 | Val Hits@20: 0.0132 | Test Hits@20: 0.0071 | Best Val: 0.0151 (epoch 40) | LR: 0.010000
+2025-11-11 02:31:14,096 - GraphSAGE Epoch 0065/300 | Loss: 1.0302 | Val Hits@20: 0.0126 | Test Hits@20: 0.0075 | Best Val: 0.0151 (epoch 40) | LR: 0.010000
+2025-11-11 02:31:22,116 - GraphSAGE Epoch 0070/300 | Loss: 1.0295 | Val Hits@20: 0.0135 | Test Hits@20: 0.0080 | Best Val: 0.0151 (epoch 40) | LR: 0.005000
+2025-11-11 02:31:30,144 - GraphSAGE Epoch 0075/300 | Loss: 1.0281 | Val Hits@20: 0.0141 | Test Hits@20: 0.0088 | Best Val: 0.0151 (epoch 40) | LR: 0.005000
+2025-11-11 02:31:38,164 - GraphSAGE Epoch 0080/300 | Loss: 1.0274 | Val Hits@20: 0.0132 | Test Hits@20: 0.0091 | Best Val: 0.0151 (epoch 40) | LR: 0.005000
+2025-11-11 02:31:46,303 - GraphSAGE Epoch 0085/300 | Loss: 1.0273 | Val Hits@20: 0.0132 | Test Hits@20: 0.0086 | Best Val: 0.0151 (epoch 40) | LR: 0.005000
+2025-11-11 02:31:54,287 - GraphSAGE Epoch 0090/300 | Loss: 1.0264 | Val Hits@20: 0.0142 | Test Hits@20: 0.0085 | Best Val: 0.0151 (epoch 40) | LR: 0.005000
+2025-11-11 02:32:02,369 - GraphSAGE Epoch 0095/300 | Loss: 1.0258 | Val Hits@20: 0.0149 | Test Hits@20: 0.0087 | Best Val: 0.0151 (epoch 40) | LR: 0.005000
+2025-11-11 02:32:10,355 - GraphSAGE Epoch 0100/300 | Loss: 1.0263 | Val Hits@20: 0.0147 | Test Hits@20: 0.0085 | Best Val: 0.0151 (epoch 40) | LR: 0.002500
+2025-11-11 02:32:18,346 - GraphSAGE Epoch 0105/300 | Loss: 1.0252 | Val Hits@20: 0.0144 | Test Hits@20: 0.0085 | Best Val: 0.0151 (epoch 40) | LR: 0.002500
+2025-11-11 02:32:26,372 - GraphSAGE Epoch 0110/300 | Loss: 1.0263 | Val Hits@20: 0.0144 | Test Hits@20: 0.0083 | Best Val: 0.0151 (epoch 40) | LR: 0.002500
+2025-11-11 02:32:34,355 - GraphSAGE Epoch 0115/300 | Loss: 1.0249 | Val Hits@20: 0.0145 | Test Hits@20: 0.0084 | Best Val: 0.0151 (epoch 40) | LR: 0.002500
+2025-11-11 02:32:42,356 - GraphSAGE Epoch 0120/300 | Loss: 1.0245 | Val Hits@20: 0.0149 | Test Hits@20: 0.0087 | Best Val: 0.0151 (epoch 40) | LR: 0.002500
+2025-11-11 02:32:50,315 - GraphSAGE Epoch 0125/300 | Loss: 1.0254 | Val Hits@20: 0.0153 | Test Hits@20: 0.0089 | Best Val: 0.0153 (epoch 125) | LR: 0.002500
+2025-11-11 02:32:58,256 - GraphSAGE Epoch 0130/300 | Loss: 1.0244 | Val Hits@20: 0.0150 | Test Hits@20: 0.0093 | Best Val: 0.0153 (epoch 125) | LR: 0.002500
+2025-11-11 02:33:06,221 - GraphSAGE Epoch 0135/300 | Loss: 1.0254 | Val Hits@20: 0.0145 | Test Hits@20: 0.0094 | Best Val: 0.0153 (epoch 125) | LR: 0.002500
+2025-11-11 02:33:14,237 - GraphSAGE Epoch 0140/300 | Loss: 1.0247 | Val Hits@20: 0.0141 | Test Hits@20: 0.0092 | Best Val: 0.0153 (epoch 125) | LR: 0.002500
+2025-11-11 02:33:22,255 - GraphSAGE Epoch 0145/300 | Loss: 1.0245 | Val Hits@20: 0.0149 | Test Hits@20: 0.0092 | Best Val: 0.0153 (epoch 125) | LR: 0.002500
+2025-11-11 02:33:30,252 - GraphSAGE Epoch 0150/300 | Loss: 1.0247 | Val Hits@20: 0.0149 | Test Hits@20: 0.0095 | Best Val: 0.0153 (epoch 125) | LR: 0.002500
+2025-11-11 02:33:38,186 - GraphSAGE Epoch 0155/300 | Loss: 1.0237 | Val Hits@20: 0.0146 | Test Hits@20: 0.0096 | Best Val: 0.0153 (epoch 125) | LR: 0.001250
+2025-11-11 02:33:46,258 - GraphSAGE Epoch 0160/300 | Loss: 1.0232 | Val Hits@20: 0.0149 | Test Hits@20: 0.0097 | Best Val: 0.0153 (epoch 125) | LR: 0.001250
+2025-11-11 02:33:54,223 - GraphSAGE Epoch 0165/300 | Loss: 1.0230 | Val Hits@20: 0.0151 | Test Hits@20: 0.0094 | Best Val: 0.0153 (epoch 125) | LR: 0.001250
+2025-11-11 02:34:02,196 - GraphSAGE Epoch 0170/300 | Loss: 1.0239 | Val Hits@20: 0.0149 | Test Hits@20: 0.0096 | Best Val: 0.0153 (epoch 125) | LR: 0.001250
+2025-11-11 02:34:10,137 - GraphSAGE Epoch 0175/300 | Loss: 1.0232 | Val Hits@20: 0.0147 | Test Hits@20: 0.0096 | Best Val: 0.0153 (epoch 125) | LR: 0.001250
+2025-11-11 02:34:18,117 - GraphSAGE Epoch 0180/300 | Loss: 1.0234 | Val Hits@20: 0.0143 | Test Hits@20: 0.0095 | Best Val: 0.0153 (epoch 125) | LR: 0.001250
+2025-11-11 02:34:26,133 - GraphSAGE Epoch 0185/300 | Loss: 1.0227 | Val Hits@20: 0.0145 | Test Hits@20: 0.0090 | Best Val: 0.0153 (epoch 125) | LR: 0.000625
+2025-11-11 02:34:34,163 - GraphSAGE Epoch 0190/300 | Loss: 1.0238 | Val Hits@20: 0.0147 | Test Hits@20: 0.0091 | Best Val: 0.0153 (epoch 125) | LR: 0.000625
+2025-11-11 02:34:42,215 - GraphSAGE Epoch 0195/300 | Loss: 1.0246 | Val Hits@20: 0.0147 | Test Hits@20: 0.0094 | Best Val: 0.0153 (epoch 125) | LR: 0.000625
+2025-11-11 02:34:50,289 - GraphSAGE Epoch 0200/300 | Loss: 1.0229 | Val Hits@20: 0.0148 | Test Hits@20: 0.0095 | Best Val: 0.0153 (epoch 125) | LR: 0.000625
+2025-11-11 02:34:58,380 - GraphSAGE Epoch 0205/300 | Loss: 1.0228 | Val Hits@20: 0.0148 | Test Hits@20: 0.0097 | Best Val: 0.0153 (epoch 125) | LR: 0.000625
+2025-11-11 02:35:06,324 - GraphSAGE Epoch 0210/300 | Loss: 1.0231 | Val Hits@20: 0.0146 | Test Hits@20: 0.0096 | Best Val: 0.0153 (epoch 125) | LR: 0.000625
+2025-11-11 02:35:14,347 - GraphSAGE Epoch 0215/300 | Loss: 1.0222 | Val Hits@20: 0.0145 | Test Hits@20: 0.0094 | Best Val: 0.0153 (epoch 125) | LR: 0.000313
+2025-11-11 02:35:22,325 - GraphSAGE Epoch 0220/300 | Loss: 1.0232 | Val Hits@20: 0.0145 | Test Hits@20: 0.0094 | Best Val: 0.0153 (epoch 125) | LR: 0.000313
+2025-11-11 02:35:30,323 - GraphSAGE Epoch 0225/300 | Loss: 1.0225 | Val Hits@20: 0.0145 | Test Hits@20: 0.0094 | Best Val: 0.0153 (epoch 125) | LR: 0.000313
+2025-11-11 02:35:38,276 - GraphSAGE Epoch 0230/300 | Loss: 1.0229 | Val Hits@20: 0.0143 | Test Hits@20: 0.0094 | Best Val: 0.0153 (epoch 125) | LR: 0.000313
+2025-11-11 02:35:46,171 - GraphSAGE Epoch 0235/300 | Loss: 1.0222 | Val Hits@20: 0.0144 | Test Hits@20: 0.0094 | Best Val: 0.0153 (epoch 125) | LR: 0.000313
+2025-11-11 02:35:54,154 - GraphSAGE Epoch 0240/300 | Loss: 1.0227 | Val Hits@20: 0.0144 | Test Hits@20: 0.0094 | Best Val: 0.0153 (epoch 125) | LR: 0.000313
+2025-11-11 02:36:02,119 - GraphSAGE Epoch 0245/300 | Loss: 1.0229 | Val Hits@20: 0.0144 | Test Hits@20: 0.0095 | Best Val: 0.0153 (epoch 125) | LR: 0.000156
+2025-11-11 02:36:10,157 - GraphSAGE Epoch 0250/300 | Loss: 1.0221 | Val Hits@20: 0.0146 | Test Hits@20: 0.0095 | Best Val: 0.0153 (epoch 125) | LR: 0.000156
+2025-11-11 02:36:18,204 - GraphSAGE Epoch 0255/300 | Loss: 1.0226 | Val Hits@20: 0.0146 | Test Hits@20: 0.0095 | Best Val: 0.0153 (epoch 125) | LR: 0.000156
+2025-11-11 02:36:26,135 - GraphSAGE Epoch 0260/300 | Loss: 1.0221 | Val Hits@20: 0.0146 | Test Hits@20: 0.0095 | Best Val: 0.0153 (epoch 125) | LR: 0.000156
+2025-11-11 02:36:34,108 - GraphSAGE Epoch 0265/300 | Loss: 1.0223 | Val Hits@20: 0.0145 | Test Hits@20: 0.0095 | Best Val: 0.0153 (epoch 125) | LR: 0.000156
+2025-11-11 02:36:42,099 - GraphSAGE Epoch 0270/300 | Loss: 1.0232 | Val Hits@20: 0.0145 | Test Hits@20: 0.0095 | Best Val: 0.0153 (epoch 125) | LR: 0.000156
+2025-11-11 02:36:50,119 - GraphSAGE Epoch 0275/300 | Loss: 1.0224 | Val Hits@20: 0.0144 | Test Hits@20: 0.0095 | Best Val: 0.0153 (epoch 125) | LR: 0.000078
+2025-11-11 02:36:50,119 - GraphSAGE: Early stopping at epoch 275 (no improvement for 30 eval steps)
+2025-11-11 02:36:50,119 - GraphSAGE FINAL: Best Val Hits@20 = 0.0153 | Test Hits@20 = 0.0089 (at epoch 125)
+2025-11-11 02:36:50,120 - 
+============================================================
+2025-11-11 02:36:50,120 - Training GraphTransformer Model (hidden_dim=128, layers=3)
+2025-11-11 02:36:50,120 - ============================================================
+2025-11-11 02:36:50,161 - Starting training for GraphTransformer (epochs=300, lr=0.005, patience=30)
+2025-11-11 02:36:52,016 - GraphTransformer Epoch 0001/300 | Loss: 1.5285 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0000 (epoch 0) | LR: 0.005000
+2025-11-11 02:36:59,048 - GraphTransformer Epoch 0005/300 | Loss: 1.2388 | Val Hits@20: 0.0030 | Test Hits@20: 0.0025 | Best Val: 0.0030 (epoch 5) | LR: 0.005000
+2025-11-11 02:37:07,883 - GraphTransformer Epoch 0010/300 | Loss: 0.9937 | Val Hits@20: 0.0017 | Test Hits@20: 0.0010 | Best Val: 0.0030 (epoch 5) | LR: 0.005000
+2025-11-11 02:37:16,623 - GraphTransformer Epoch 0015/300 | Loss: 0.8687 | Val Hits@20: 0.0049 | Test Hits@20: 0.0036 | Best Val: 0.0049 (epoch 15) | LR: 0.005000
+2025-11-11 02:37:25,234 - GraphTransformer Epoch 0020/300 | Loss: 0.7971 | Val Hits@20: 0.0090 | Test Hits@20: 0.0061 | Best Val: 0.0090 (epoch 20) | LR: 0.005000
+2025-11-11 02:37:33,895 - GraphTransformer Epoch 0025/300 | Loss: 0.7484 | Val Hits@20: 0.0088 | Test Hits@20: 0.0112 | Best Val: 0.0090 (epoch 20) | LR: 0.005000
+2025-11-11 02:37:42,515 - GraphTransformer Epoch 0030/300 | Loss: 0.7183 | Val Hits@20: 0.0142 | Test Hits@20: 0.0126 | Best Val: 0.0142 (epoch 30) | LR: 0.005000
+2025-11-11 02:37:51,167 - GraphTransformer Epoch 0035/300 | Loss: 0.6973 | Val Hits@20: 0.0182 | Test Hits@20: 0.0155 | Best Val: 0.0182 (epoch 35) | LR: 0.005000
+2025-11-11 02:37:59,809 - GraphTransformer Epoch 0040/300 | Loss: 0.6836 | Val Hits@20: 0.0184 | Test Hits@20: 0.0147 | Best Val: 0.0184 (epoch 40) | LR: 0.005000
+2025-11-11 02:38:08,508 - GraphTransformer Epoch 0045/300 | Loss: 0.6724 | Val Hits@20: 0.0217 | Test Hits@20: 0.0139 | Best Val: 0.0217 (epoch 45) | LR: 0.005000
+2025-11-11 02:38:17,157 - GraphTransformer Epoch 0050/300 | Loss: 0.6618 | Val Hits@20: 0.0248 | Test Hits@20: 0.0158 | Best Val: 0.0248 (epoch 50) | LR: 0.005000
+2025-11-11 02:38:25,761 - GraphTransformer Epoch 0055/300 | Loss: 0.6525 | Val Hits@20: 0.0256 | Test Hits@20: 0.0171 | Best Val: 0.0256 (epoch 55) | LR: 0.005000
+2025-11-11 02:38:34,500 - GraphTransformer Epoch 0060/300 | Loss: 0.6447 | Val Hits@20: 0.0247 | Test Hits@20: 0.0181 | Best Val: 0.0256 (epoch 55) | LR: 0.005000
+2025-11-11 02:38:43,143 - GraphTransformer Epoch 0065/300 | Loss: 0.6353 | Val Hits@20: 0.0254 | Test Hits@20: 0.0197 | Best Val: 0.0256 (epoch 55) | LR: 0.005000
+2025-11-11 02:38:51,900 - GraphTransformer Epoch 0070/300 | Loss: 0.6265 | Val Hits@20: 0.0280 | Test Hits@20: 0.0195 | Best Val: 0.0280 (epoch 70) | LR: 0.005000
+2025-11-11 02:39:00,540 - GraphTransformer Epoch 0075/300 | Loss: 0.6158 | Val Hits@20: 0.0303 | Test Hits@20: 0.0211 | Best Val: 0.0303 (epoch 75) | LR: 0.005000
+2025-11-11 02:39:09,187 - GraphTransformer Epoch 0080/300 | Loss: 0.6056 | Val Hits@20: 0.0329 | Test Hits@20: 0.0209 | Best Val: 0.0329 (epoch 80) | LR: 0.005000
+2025-11-11 02:39:17,893 - GraphTransformer Epoch 0085/300 | Loss: 0.5957 | Val Hits@20: 0.0304 | Test Hits@20: 0.0214 | Best Val: 0.0329 (epoch 80) | LR: 0.005000
+2025-11-11 02:39:26,616 - GraphTransformer Epoch 0090/300 | Loss: 0.5862 | Val Hits@20: 0.0314 | Test Hits@20: 0.0210 | Best Val: 0.0329 (epoch 80) | LR: 0.005000
+2025-11-11 02:39:35,322 - GraphTransformer Epoch 0095/300 | Loss: 0.5770 | Val Hits@20: 0.0278 | Test Hits@20: 0.0213 | Best Val: 0.0329 (epoch 80) | LR: 0.005000
+2025-11-11 02:39:44,034 - GraphTransformer Epoch 0100/300 | Loss: 0.5627 | Val Hits@20: 0.0285 | Test Hits@20: 0.0181 | Best Val: 0.0329 (epoch 80) | LR: 0.005000
+2025-11-11 02:39:52,716 - GraphTransformer Epoch 0105/300 | Loss: 0.5521 | Val Hits@20: 0.0332 | Test Hits@20: 0.0238 | Best Val: 0.0332 (epoch 105) | LR: 0.005000
+2025-11-11 02:40:01,354 - GraphTransformer Epoch 0110/300 | Loss: 0.5442 | Val Hits@20: 0.0333 | Test Hits@20: 0.0254 | Best Val: 0.0333 (epoch 110) | LR: 0.005000
+2025-11-11 02:40:09,980 - GraphTransformer Epoch 0115/300 | Loss: 0.5383 | Val Hits@20: 0.0340 | Test Hits@20: 0.0268 | Best Val: 0.0340 (epoch 115) | LR: 0.005000
+2025-11-11 02:40:18,683 - GraphTransformer Epoch 0120/300 | Loss: 0.5298 | Val Hits@20: 0.0293 | Test Hits@20: 0.0279 | Best Val: 0.0340 (epoch 115) | LR: 0.005000
+2025-11-11 02:40:27,388 - GraphTransformer Epoch 0125/300 | Loss: 0.5256 | Val Hits@20: 0.0356 | Test Hits@20: 0.0321 | Best Val: 0.0356 (epoch 125) | LR: 0.005000
+2025-11-11 02:40:36,065 - GraphTransformer Epoch 0130/300 | Loss: 0.5159 | Val Hits@20: 0.0360 | Test Hits@20: 0.0320 | Best Val: 0.0360 (epoch 130) | LR: 0.005000
+2025-11-11 02:40:44,789 - GraphTransformer Epoch 0135/300 | Loss: 0.5139 | Val Hits@20: 0.0314 | Test Hits@20: 0.0360 | Best Val: 0.0360 (epoch 130) | LR: 0.005000
+2025-11-11 02:40:53,521 - GraphTransformer Epoch 0140/300 | Loss: 0.5076 | Val Hits@20: 0.0347 | Test Hits@20: 0.0370 | Best Val: 0.0360 (epoch 130) | LR: 0.005000
+2025-11-11 02:41:02,186 - GraphTransformer Epoch 0145/300 | Loss: 0.5015 | Val Hits@20: 0.0411 | Test Hits@20: 0.0373 | Best Val: 0.0411 (epoch 145) | LR: 0.005000
+2025-11-11 02:41:10,929 - GraphTransformer Epoch 0150/300 | Loss: 0.4958 | Val Hits@20: 0.0436 | Test Hits@20: 0.0419 | Best Val: 0.0436 (epoch 150) | LR: 0.005000
+2025-11-11 02:41:19,675 - GraphTransformer Epoch 0155/300 | Loss: 0.4905 | Val Hits@20: 0.0467 | Test Hits@20: 0.0407 | Best Val: 0.0467 (epoch 155) | LR: 0.005000
+2025-11-11 02:41:28,314 - GraphTransformer Epoch 0160/300 | Loss: 0.4869 | Val Hits@20: 0.0536 | Test Hits@20: 0.0439 | Best Val: 0.0536 (epoch 160) | LR: 0.005000
+2025-11-11 02:41:37,019 - GraphTransformer Epoch 0165/300 | Loss: 0.4833 | Val Hits@20: 0.0629 | Test Hits@20: 0.0502 | Best Val: 0.0629 (epoch 165) | LR: 0.005000
+2025-11-11 02:41:45,758 - GraphTransformer Epoch 0170/300 | Loss: 0.4749 | Val Hits@20: 0.0632 | Test Hits@20: 0.0507 | Best Val: 0.0632 (epoch 170) | LR: 0.005000
+2025-11-11 02:41:54,448 - GraphTransformer Epoch 0175/300 | Loss: 0.4719 | Val Hits@20: 0.0616 | Test Hits@20: 0.0495 | Best Val: 0.0632 (epoch 170) | LR: 0.005000
+2025-11-11 02:42:03,108 - GraphTransformer Epoch 0180/300 | Loss: 0.4706 | Val Hits@20: 0.0608 | Test Hits@20: 0.0438 | Best Val: 0.0632 (epoch 170) | LR: 0.005000
+2025-11-11 02:42:11,785 - GraphTransformer Epoch 0185/300 | Loss: 0.4665 | Val Hits@20: 0.0490 | Test Hits@20: 0.0533 | Best Val: 0.0632 (epoch 170) | LR: 0.005000
+2025-11-11 02:42:20,502 - GraphTransformer Epoch 0190/300 | Loss: 0.4628 | Val Hits@20: 0.0601 | Test Hits@20: 0.0446 | Best Val: 0.0632 (epoch 170) | LR: 0.005000
+2025-11-11 02:42:29,115 - GraphTransformer Epoch 0195/300 | Loss: 0.4578 | Val Hits@20: 0.0568 | Test Hits@20: 0.0405 | Best Val: 0.0632 (epoch 170) | LR: 0.005000
+2025-11-11 02:42:37,644 - GraphTransformer Epoch 0200/300 | Loss: 0.4547 | Val Hits@20: 0.0637 | Test Hits@20: 0.0435 | Best Val: 0.0637 (epoch 200) | LR: 0.005000
+2025-11-11 02:42:45,627 - GraphTransformer Epoch 0205/300 | Loss: 0.4539 | Val Hits@20: 0.0694 | Test Hits@20: 0.0507 | Best Val: 0.0694 (epoch 205) | LR: 0.005000
+2025-11-11 02:42:53,550 - GraphTransformer Epoch 0210/300 | Loss: 0.4531 | Val Hits@20: 0.0869 | Test Hits@20: 0.0534 | Best Val: 0.0869 (epoch 210) | LR: 0.005000
+2025-11-11 02:43:01,488 - GraphTransformer Epoch 0215/300 | Loss: 0.4468 | Val Hits@20: 0.0986 | Test Hits@20: 0.0581 | Best Val: 0.0986 (epoch 215) | LR: 0.005000
+2025-11-11 02:43:09,400 - GraphTransformer Epoch 0220/300 | Loss: 0.4462 | Val Hits@20: 0.0822 | Test Hits@20: 0.0547 | Best Val: 0.0986 (epoch 215) | LR: 0.005000
+2025-11-11 02:43:17,337 - GraphTransformer Epoch 0225/300 | Loss: 0.4421 | Val Hits@20: 0.1186 | Test Hits@20: 0.0583 | Best Val: 0.1186 (epoch 225) | LR: 0.005000
+2025-11-11 02:43:25,269 - GraphTransformer Epoch 0230/300 | Loss: 0.4389 | Val Hits@20: 0.0965 | Test Hits@20: 0.0548 | Best Val: 0.1186 (epoch 225) | LR: 0.005000
+2025-11-11 02:43:33,241 - GraphTransformer Epoch 0235/300 | Loss: 0.4364 | Val Hits@20: 0.1220 | Test Hits@20: 0.0594 | Best Val: 0.1220 (epoch 235) | LR: 0.005000
+2025-11-11 02:43:41,152 - GraphTransformer Epoch 0240/300 | Loss: 0.4337 | Val Hits@20: 0.1067 | Test Hits@20: 0.0561 | Best Val: 0.1220 (epoch 235) | LR: 0.005000
+2025-11-11 02:43:49,101 - GraphTransformer Epoch 0245/300 | Loss: 0.4322 | Val Hits@20: 0.1409 | Test Hits@20: 0.0619 | Best Val: 0.1409 (epoch 245) | LR: 0.005000
+2025-11-11 02:43:57,005 - GraphTransformer Epoch 0250/300 | Loss: 0.4331 | Val Hits@20: 0.1277 | Test Hits@20: 0.0515 | Best Val: 0.1409 (epoch 245) | LR: 0.005000
+2025-11-11 02:44:04,967 - GraphTransformer Epoch 0255/300 | Loss: 0.4292 | Val Hits@20: 0.1440 | Test Hits@20: 0.0591 | Best Val: 0.1440 (epoch 255) | LR: 0.005000
+2025-11-11 02:44:12,876 - GraphTransformer Epoch 0260/300 | Loss: 0.4287 | Val Hits@20: 0.1123 | Test Hits@20: 0.0574 | Best Val: 0.1440 (epoch 255) | LR: 0.005000
+2025-11-11 02:44:20,826 - GraphTransformer Epoch 0265/300 | Loss: 0.4276 | Val Hits@20: 0.1538 | Test Hits@20: 0.0677 | Best Val: 0.1538 (epoch 265) | LR: 0.005000
+2025-11-11 02:44:28,796 - GraphTransformer Epoch 0270/300 | Loss: 0.4306 | Val Hits@20: 0.1223 | Test Hits@20: 0.0663 | Best Val: 0.1538 (epoch 265) | LR: 0.005000
+2025-11-11 02:44:36,760 - GraphTransformer Epoch 0275/300 | Loss: 0.4285 | Val Hits@20: 0.1271 | Test Hits@20: 0.0770 | Best Val: 0.1538 (epoch 265) | LR: 0.005000
+2025-11-11 02:44:44,724 - GraphTransformer Epoch 0280/300 | Loss: 0.4275 | Val Hits@20: 0.1216 | Test Hits@20: 0.0700 | Best Val: 0.1538 (epoch 265) | LR: 0.005000
+2025-11-11 02:44:52,636 - GraphTransformer Epoch 0285/300 | Loss: 0.4272 | Val Hits@20: 0.1184 | Test Hits@20: 0.0605 | Best Val: 0.1538 (epoch 265) | LR: 0.005000
+2025-11-11 02:45:00,523 - GraphTransformer Epoch 0290/300 | Loss: 0.4222 | Val Hits@20: 0.1105 | Test Hits@20: 0.0593 | Best Val: 0.1538 (epoch 265) | LR: 0.005000
+2025-11-11 02:45:08,455 - GraphTransformer Epoch 0295/300 | Loss: 0.4222 | Val Hits@20: 0.1103 | Test Hits@20: 0.0520 | Best Val: 0.1538 (epoch 265) | LR: 0.002500
+2025-11-11 02:45:16,414 - GraphTransformer Epoch 0300/300 | Loss: 0.4204 | Val Hits@20: 0.1407 | Test Hits@20: 0.0680 | Best Val: 0.1538 (epoch 265) | LR: 0.002500
+2025-11-11 02:45:16,414 - GraphTransformer FINAL: Best Val Hits@20 = 0.1538 | Test Hits@20 = 0.0677 (at epoch 265)
+2025-11-11 02:45:16,415 - 
+================================================================================
+2025-11-11 02:45:16,415 - FINAL RESULTS SUMMARY
+2025-11-11 02:45:16,415 - ================================================================================
+2025-11-11 02:45:16,415 - Model                    Val Hits@20    Test Hits@20
+2025-11-11 02:45:16,415 - --------------------------------------------------------------------------------
+2025-11-11 02:45:16,415 - GCN                           0.1647          0.0935
+2025-11-11 02:45:16,415 - GraphSAGE                     0.0153          0.0089
+2025-11-11 02:45:16,415 - GraphTransformer              0.1538          0.0677
+2025-11-11 02:45:16,415 - ================================================================================
+2025-11-11 02:45:16,415 - 
+================================================================================
+2025-11-11 02:45:16,416 - Training and evaluation completed successfully!
+2025-11-11 02:45:16,416 - Results logged to: logs/results_20251111_022137.log
+2025-11-11 02:45:16,416 - ================================================================================
