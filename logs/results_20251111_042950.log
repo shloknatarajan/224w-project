@@ -1,0 +1,7 @@
+2025-11-11 04:29:50,162 - Using device: cuda
+2025-11-11 04:29:50,162 - Logging results to: logs/results_20251111_042950.log
+2025-11-11 04:29:50,162 - Loading dataset ogbl-ddi...
+2025-11-11 04:29:50,246 - Dataset loaded: 4267 nodes
+2025-11-11 04:29:50,405 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 04:29:50,405 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 04:29:50,425 - Added self-loops: Total edges now = 1072178

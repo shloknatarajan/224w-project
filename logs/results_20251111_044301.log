@@ -1,0 +1,38 @@
+2025-11-11 04:43:01,598 - Using device: cuda
+2025-11-11 04:43:01,598 - Logging results to: logs/results_20251111_044301.log
+2025-11-11 04:43:01,598 - Loading dataset ogbl-ddi...
+2025-11-11 04:43:01,683 - Dataset loaded: 4267 nodes
+2025-11-11 04:43:01,841 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 04:43:01,841 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 04:43:01,854 - Computing structural features (this may take a moment)...
+2025-11-11 04:46:58,807 - Added self-loops: Total edges now = 1072178
+2025-11-11 04:46:58,807 - Computed rich structural features (6 dims):
+2025-11-11 04:46:58,809 -   - Degree: mean=4.473, std=1.892
+2025-11-11 04:46:58,809 -   - Clustering: mean=0.514, std=0.219
+2025-11-11 04:46:58,809 -   - Core number: mean=5.122, std=1.539
+2025-11-11 04:46:58,810 -   - PageRank: mean=0.105, std=0.075
+2025-11-11 04:46:58,812 - ================================================================================
+2025-11-11 04:46:58,812 - MODEL CONFIGURATION - GCN-Enhanced-v4-RichFeatures
+2025-11-11 04:46:58,812 - ================================================================================
+2025-11-11 04:46:58,812 - Architecture:
+2025-11-11 04:46:58,812 -   Model: GCN-Enhanced-v4-RichFeatures
+2025-11-11 04:46:58,812 -   Decoder: multi_strategy
+2025-11-11 04:46:58,812 -   Hidden Dim: 256, Layers: 3
+2025-11-11 04:46:58,812 -   Dropout: 0.5, Decoder Dropout: 0.4
+2025-11-11 04:46:58,812 -   Self-loops: True, Scaled Residual: True
+2025-11-11 04:46:58,812 -   Structural Features: 6 dims (degree, clustering, core, pagerank, neighbor stats)
+2025-11-11 04:46:58,812 - 
+2025-11-11 04:46:58,812 - Training:
+2025-11-11 04:46:58,812 -   Epochs: 400, Patience: 40
+2025-11-11 04:46:58,812 -   Learning Rate: 0.003, Weight Decay: 5e-05
+2025-11-11 04:46:58,812 -   Edge Dropout: 0.15, Embedding L2: 0.005
+2025-11-11 04:46:58,813 -   Hard Negatives: True (ratio=0.2, warmup=20)
+2025-11-11 04:46:58,813 -   Scheduler: factor=0.5, patience=15
+2025-11-11 04:46:58,813 -   Batch Size: 50000, Eval Batch: 100000
+2025-11-11 04:46:58,813 - 
+2025-11-11 04:46:58,813 - Dataset:
+2025-11-11 04:46:58,813 -   Nodes: 4267
+2025-11-11 04:46:58,813 -   Train Edges: 1067911
+2025-11-11 04:46:58,813 -   Val Edges: 133489, Test Edges: 133489
+2025-11-11 04:46:58,813 - ================================================================================
+2025-11-11 04:46:58,862 - Starting training for GCN-Enhanced-v4-RichFeatures (epochs=400, lr=0.003, patience=40, hard_neg=True)

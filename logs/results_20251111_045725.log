@@ -1,0 +1,161 @@
+2025-11-11 04:57:25,097 - Using device: cuda
+2025-11-11 04:57:25,097 - Logging results to: logs/results_20251111_045725.log
+2025-11-11 04:57:25,098 - Loading dataset ogbl-ddi...
+2025-11-11 04:57:25,183 - Dataset loaded: 4267 nodes
+2025-11-11 04:57:25,343 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 04:57:25,343 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 04:57:25,357 - Computing structural features (this may take a moment)...
+2025-11-11 05:01:21,789 - Added self-loops: Total edges now = 1072178
+2025-11-11 05:01:21,790 - Computed rich structural features (6 dims):
+2025-11-11 05:01:21,792 -   - Degree: mean=4.473, std=1.892
+2025-11-11 05:01:21,792 -   - Clustering: mean=0.514, std=0.219
+2025-11-11 05:01:21,792 -   - Core number: mean=5.122, std=1.539
+2025-11-11 05:01:21,793 -   - PageRank: mean=0.105, std=0.075
+2025-11-11 05:01:21,795 - ================================================================================
+2025-11-11 05:01:21,795 - MODEL CONFIGURATION - GCN-Enhanced-v4-RichFeatures
+2025-11-11 05:01:21,795 - ================================================================================
+2025-11-11 05:01:21,795 - Architecture:
+2025-11-11 05:01:21,795 -   Model: GCN-Enhanced-v4-RichFeatures
+2025-11-11 05:01:21,795 -   Decoder: simplified_hadamard
+2025-11-11 05:01:21,795 -   Hidden Dim: 192, Layers: 3
+2025-11-11 05:01:21,795 -   Dropout: 0.5, Decoder Dropout: 0.4
+2025-11-11 05:01:21,795 -   Self-loops: True, Scaled Residual: True
+2025-11-11 05:01:21,795 -   Structural Features: 6 dims (degree, clustering, core, pagerank, neighbor stats)
+2025-11-11 05:01:21,795 - 
+2025-11-11 05:01:21,795 - Training:
+2025-11-11 05:01:21,795 -   Epochs: 400, Patience: 40
+2025-11-11 05:01:21,795 -   Learning Rate: 0.003, Weight Decay: 5e-05
+2025-11-11 05:01:21,796 -   Edge Dropout: 0.15, Embedding L2: 0.005
+2025-11-11 05:01:21,796 -   Hard Negatives: True (ratio=0.15, warmup=20)
+2025-11-11 05:01:21,796 -   Scheduler: factor=0.5, patience=15
+2025-11-11 05:01:21,796 -   Batch Size: 20000, Eval Batch: 50000
+2025-11-11 05:01:21,796 - 
+2025-11-11 05:01:21,796 - Dataset:
+2025-11-11 05:01:21,796 -   Nodes: 4267
+2025-11-11 05:01:21,796 -   Train Edges: 1067911
+2025-11-11 05:01:21,796 -   Val Edges: 133489, Test Edges: 133489
+2025-11-11 05:01:21,796 - ================================================================================
+2025-11-11 05:01:21,840 - Starting training for GCN-Enhanced-v4-RichFeatures (epochs=400, lr=0.003, patience=40, hard_neg=True)
+2025-11-11 05:01:21,840 - Memory optimization: batch_size=20000, gradient_accumulation=3
+2025-11-11 05:01:24,644 - GCN-Enhanced-v4-RichFeatures Epoch 0001/400 [Random Neg] | Loss: 1.5322 | Val Hits@20: 0.0006 | Test Hits@20: 0.0001 | Best Val: 0.0006 (epoch 1) | LR: 0.003000 🔥
+2025-11-11 05:01:34,189 - GCN-Enhanced-v4-RichFeatures Epoch 0005/400 [Random Neg] | Loss: 1.1187 | Val Hits@20: 0.0012 | Test Hits@20: 0.0010 | Best Val: 0.0012 (epoch 5) | LR: 0.003000 🔥
+2025-11-11 05:01:46,029 - GCN-Enhanced-v4-RichFeatures Epoch 0010/400 [Random Neg] | Loss: 1.0293 | Val Hits@20: 0.0001 | Test Hits@20: 0.0001 | Best Val: 0.0012 (epoch 5) | LR: 0.003000 
+2025-11-11 05:02:03,972 - GCN-Enhanced-v4-RichFeatures Epoch 0015/400 [Hard Neg] | Loss: 1.0557 | Val Hits@20: 0.0110 | Test Hits@20: 0.0025 | Best Val: 0.0110 (epoch 15) | LR: 0.003000 🔥
+2025-11-11 05:02:21,459 - GCN-Enhanced-v4-RichFeatures Epoch 0020/400 [Hard Neg] | Loss: 1.0044 | Val Hits@20: 0.0522 | Test Hits@20: 0.0299 | Best Val: 0.0522 (epoch 20) | LR: 0.003000 🔥
+2025-11-11 05:02:38,714 - GCN-Enhanced-v4-RichFeatures Epoch 0025/400 [Hard Neg] | Loss: 0.9653 | Val Hits@20: 0.0117 | Test Hits@20: 0.0130 | Best Val: 0.0522 (epoch 20) | LR: 0.003000 
+2025-11-11 05:02:55,913 - GCN-Enhanced-v4-RichFeatures Epoch 0030/400 [Hard Neg] | Loss: 0.9386 | Val Hits@20: 0.0477 | Test Hits@20: 0.0386 | Best Val: 0.0522 (epoch 20) | LR: 0.003000 
+2025-11-11 05:03:13,143 - GCN-Enhanced-v4-RichFeatures Epoch 0035/400 [Hard Neg] | Loss: 0.9125 | Val Hits@20: 0.1168 | Test Hits@20: 0.1054 | Best Val: 0.1168 (epoch 35) | LR: 0.003000 🔥
+2025-11-11 05:03:30,383 - GCN-Enhanced-v4-RichFeatures Epoch 0040/400 [Hard Neg] | Loss: 0.9003 | Val Hits@20: 0.1197 | Test Hits@20: 0.1916 | Best Val: 0.1197 (epoch 40) | LR: 0.003000 🔥
+2025-11-11 05:03:47,583 - GCN-Enhanced-v4-RichFeatures Epoch 0045/400 [Hard Neg] | Loss: 0.8862 | Val Hits@20: 0.0705 | Test Hits@20: 0.0649 | Best Val: 0.1197 (epoch 40) | LR: 0.003000 
+2025-11-11 05:04:04,787 - GCN-Enhanced-v4-RichFeatures Epoch 0050/400 [Hard Neg] | Loss: 0.8743 | Val Hits@20: 0.1690 | Test Hits@20: 0.1317 | Best Val: 0.1690 (epoch 50) | LR: 0.003000 🔥
+2025-11-11 05:04:22,022 - GCN-Enhanced-v4-RichFeatures Epoch 0055/400 [Hard Neg] | Loss: 0.8678 | Val Hits@20: 0.1887 | Test Hits@20: 0.1379 | Best Val: 0.1887 (epoch 55) | LR: 0.003000 🔥
+2025-11-11 05:04:39,224 - GCN-Enhanced-v4-RichFeatures Epoch 0060/400 [Hard Neg] | Loss: 0.8552 | Val Hits@20: 0.2210 | Test Hits@20: 0.1543 | Best Val: 0.2210 (epoch 60) | LR: 0.003000 🔥
+2025-11-11 05:04:56,392 - GCN-Enhanced-v4-RichFeatures Epoch 0065/400 [Hard Neg] | Loss: 0.8421 | Val Hits@20: 0.2463 | Test Hits@20: 0.2346 | Best Val: 0.2463 (epoch 65) | LR: 0.003000 🔥
+2025-11-11 05:05:13,640 - GCN-Enhanced-v4-RichFeatures Epoch 0070/400 [Hard Neg] | Loss: 0.8334 | Val Hits@20: 0.2610 | Test Hits@20: 0.2713 | Best Val: 0.2610 (epoch 70) | LR: 0.003000 🔥
+2025-11-11 05:05:30,894 - GCN-Enhanced-v4-RichFeatures Epoch 0075/400 [Hard Neg] | Loss: 0.8185 | Val Hits@20: 0.1271 | Test Hits@20: 0.1711 | Best Val: 0.2610 (epoch 70) | LR: 0.003000 
+2025-11-11 05:05:48,111 - GCN-Enhanced-v4-RichFeatures Epoch 0080/400 [Hard Neg] | Loss: 0.8068 | Val Hits@20: 0.1712 | Test Hits@20: 0.0696 | Best Val: 0.2610 (epoch 70) | LR: 0.003000 
+2025-11-11 05:06:05,363 - GCN-Enhanced-v4-RichFeatures Epoch 0085/400 [Hard Neg] | Loss: 0.7977 | Val Hits@20: 0.1045 | Test Hits@20: 0.0493 | Best Val: 0.2610 (epoch 70) | LR: 0.003000 
+2025-11-11 05:06:22,598 - GCN-Enhanced-v4-RichFeatures Epoch 0090/400 [Hard Neg] | Loss: 0.7998 | Val Hits@20: 0.0749 | Test Hits@20: 0.0340 | Best Val: 0.2610 (epoch 70) | LR: 0.003000 
+2025-11-11 05:06:39,865 - GCN-Enhanced-v4-RichFeatures Epoch 0095/400 [Hard Neg] | Loss: 0.7900 | Val Hits@20: 0.1759 | Test Hits@20: 0.2694 | Best Val: 0.2610 (epoch 70) | LR: 0.003000 
+2025-11-11 05:06:57,085 - GCN-Enhanced-v4-RichFeatures Epoch 0100/400 [Hard Neg] | Loss: 0.7803 | Val Hits@20: 0.0605 | Test Hits@20: 0.0288 | Best Val: 0.2610 (epoch 70) | LR: 0.003000 
+2025-11-11 05:07:14,280 - GCN-Enhanced-v4-RichFeatures Epoch 0105/400 [Hard Neg] | Loss: 0.7831 | Val Hits@20: 0.0920 | Test Hits@20: 0.0334 | Best Val: 0.2610 (epoch 70) | LR: 0.003000 
+2025-11-11 05:07:31,501 - GCN-Enhanced-v4-RichFeatures Epoch 0110/400 [Hard Neg] | Loss: 0.7696 | Val Hits@20: 0.1969 | Test Hits@20: 0.2848 | Best Val: 0.2610 (epoch 70) | LR: 0.003000 
+2025-11-11 05:07:48,713 - GCN-Enhanced-v4-RichFeatures Epoch 0115/400 [Hard Neg] | Loss: 0.7644 | Val Hits@20: 0.0577 | Test Hits@20: 0.0322 | Best Val: 0.2610 (epoch 70) | LR: 0.003000 
+2025-11-11 05:08:05,931 - GCN-Enhanced-v4-RichFeatures Epoch 0120/400 [Hard Neg] | Loss: 0.7705 | Val Hits@20: 0.2767 | Test Hits@20: 0.2418 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 🔥
+2025-11-11 05:08:23,185 - GCN-Enhanced-v4-RichFeatures Epoch 0125/400 [Hard Neg] | Loss: 0.7676 | Val Hits@20: 0.0586 | Test Hits@20: 0.0442 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:08:40,453 - GCN-Enhanced-v4-RichFeatures Epoch 0130/400 [Hard Neg] | Loss: 0.7603 | Val Hits@20: 0.0659 | Test Hits@20: 0.1602 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:08:57,656 - GCN-Enhanced-v4-RichFeatures Epoch 0135/400 [Hard Neg] | Loss: 0.7611 | Val Hits@20: 0.1615 | Test Hits@20: 0.1824 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:09:14,886 - GCN-Enhanced-v4-RichFeatures Epoch 0140/400 [Hard Neg] | Loss: 0.7522 | Val Hits@20: 0.1712 | Test Hits@20: 0.0617 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:09:32,160 - GCN-Enhanced-v4-RichFeatures Epoch 0145/400 [Hard Neg] | Loss: 0.7514 | Val Hits@20: 0.0420 | Test Hits@20: 0.1056 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:09:49,393 - GCN-Enhanced-v4-RichFeatures Epoch 0150/400 [Hard Neg] | Loss: 0.7501 | Val Hits@20: 0.1562 | Test Hits@20: 0.1403 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:10:06,604 - GCN-Enhanced-v4-RichFeatures Epoch 0155/400 [Hard Neg] | Loss: 0.7427 | Val Hits@20: 0.1832 | Test Hits@20: 0.2194 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:10:23,856 - GCN-Enhanced-v4-RichFeatures Epoch 0160/400 [Hard Neg] | Loss: 0.7367 | Val Hits@20: 0.1153 | Test Hits@20: 0.1610 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:10:41,062 - GCN-Enhanced-v4-RichFeatures Epoch 0165/400 [Hard Neg] | Loss: 0.7455 | Val Hits@20: 0.1694 | Test Hits@20: 0.1586 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:10:58,271 - GCN-Enhanced-v4-RichFeatures Epoch 0170/400 [Hard Neg] | Loss: 0.7253 | Val Hits@20: 0.0899 | Test Hits@20: 0.1321 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:11:15,481 - GCN-Enhanced-v4-RichFeatures Epoch 0175/400 [Hard Neg] | Loss: 0.7269 | Val Hits@20: 0.1687 | Test Hits@20: 0.2657 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:11:32,774 - GCN-Enhanced-v4-RichFeatures Epoch 0180/400 [Hard Neg] | Loss: 0.7341 | Val Hits@20: 0.1311 | Test Hits@20: 0.1653 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:11:50,006 - GCN-Enhanced-v4-RichFeatures Epoch 0185/400 [Hard Neg] | Loss: 0.7318 | Val Hits@20: 0.0530 | Test Hits@20: 0.1457 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:12:07,216 - GCN-Enhanced-v4-RichFeatures Epoch 0190/400 [Hard Neg] | Loss: 0.7176 | Val Hits@20: 0.1082 | Test Hits@20: 0.1116 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:12:24,433 - GCN-Enhanced-v4-RichFeatures Epoch 0195/400 [Hard Neg] | Loss: 0.7055 | Val Hits@20: 0.2079 | Test Hits@20: 0.1886 | Best Val: 0.2767 (epoch 120) | LR: 0.003000 
+2025-11-11 05:12:41,654 - GCN-Enhanced-v4-RichFeatures Epoch 0200/400 [Hard Neg] | Loss: 0.7214 | Val Hits@20: 0.0801 | Test Hits@20: 0.0993 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:12:58,872 - GCN-Enhanced-v4-RichFeatures Epoch 0205/400 [Hard Neg] | Loss: 0.7035 | Val Hits@20: 0.1923 | Test Hits@20: 0.2072 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:13:16,083 - GCN-Enhanced-v4-RichFeatures Epoch 0210/400 [Hard Neg] | Loss: 0.6966 | Val Hits@20: 0.2628 | Test Hits@20: 0.2934 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:13:33,384 - GCN-Enhanced-v4-RichFeatures Epoch 0215/400 [Hard Neg] | Loss: 0.7058 | Val Hits@20: 0.2011 | Test Hits@20: 0.2792 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:13:50,593 - GCN-Enhanced-v4-RichFeatures Epoch 0220/400 [Hard Neg] | Loss: 0.6941 | Val Hits@20: 0.2300 | Test Hits@20: 0.2938 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:14:07,810 - GCN-Enhanced-v4-RichFeatures Epoch 0225/400 [Hard Neg] | Loss: 0.6981 | Val Hits@20: 0.2059 | Test Hits@20: 0.2845 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:14:25,079 - GCN-Enhanced-v4-RichFeatures Epoch 0230/400 [Hard Neg] | Loss: 0.6927 | Val Hits@20: 0.2346 | Test Hits@20: 0.2110 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:14:42,308 - GCN-Enhanced-v4-RichFeatures Epoch 0235/400 [Hard Neg] | Loss: 0.6911 | Val Hits@20: 0.1651 | Test Hits@20: 0.1980 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:14:59,612 - GCN-Enhanced-v4-RichFeatures Epoch 0240/400 [Hard Neg] | Loss: 0.6916 | Val Hits@20: 0.1836 | Test Hits@20: 0.2396 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:15:16,851 - GCN-Enhanced-v4-RichFeatures Epoch 0245/400 [Hard Neg] | Loss: 0.6959 | Val Hits@20: 0.1638 | Test Hits@20: 0.1229 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:15:34,093 - GCN-Enhanced-v4-RichFeatures Epoch 0250/400 [Hard Neg] | Loss: 0.6931 | Val Hits@20: 0.1416 | Test Hits@20: 0.1291 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:15:51,349 - GCN-Enhanced-v4-RichFeatures Epoch 0255/400 [Hard Neg] | Loss: 0.6886 | Val Hits@20: 0.2237 | Test Hits@20: 0.2632 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:16:08,585 - GCN-Enhanced-v4-RichFeatures Epoch 0260/400 [Hard Neg] | Loss: 0.6865 | Val Hits@20: 0.1152 | Test Hits@20: 0.2152 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:16:25,798 - GCN-Enhanced-v4-RichFeatures Epoch 0265/400 [Hard Neg] | Loss: 0.6956 | Val Hits@20: 0.1085 | Test Hits@20: 0.1528 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:16:43,064 - GCN-Enhanced-v4-RichFeatures Epoch 0270/400 [Hard Neg] | Loss: 0.6829 | Val Hits@20: 0.1625 | Test Hits@20: 0.1830 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:17:00,238 - GCN-Enhanced-v4-RichFeatures Epoch 0275/400 [Hard Neg] | Loss: 0.6705 | Val Hits@20: 0.1359 | Test Hits@20: 0.2081 | Best Val: 0.2767 (epoch 120) | LR: 0.001500 
+2025-11-11 05:17:17,426 - GCN-Enhanced-v4-RichFeatures Epoch 0280/400 [Hard Neg] | Loss: 0.6790 | Val Hits@20: 0.1016 | Test Hits@20: 0.1595 | Best Val: 0.2767 (epoch 120) | LR: 0.000750 
+2025-11-11 05:17:34,643 - GCN-Enhanced-v4-RichFeatures Epoch 0285/400 [Hard Neg] | Loss: 0.6838 | Val Hits@20: 0.1761 | Test Hits@20: 0.1773 | Best Val: 0.2767 (epoch 120) | LR: 0.000750 
+2025-11-11 05:17:51,841 - GCN-Enhanced-v4-RichFeatures Epoch 0290/400 [Hard Neg] | Loss: 0.6912 | Val Hits@20: 0.2392 | Test Hits@20: 0.2911 | Best Val: 0.2767 (epoch 120) | LR: 0.000750 
+2025-11-11 05:18:09,047 - GCN-Enhanced-v4-RichFeatures Epoch 0295/400 [Hard Neg] | Loss: 0.6731 | Val Hits@20: 0.1695 | Test Hits@20: 0.3008 | Best Val: 0.2767 (epoch 120) | LR: 0.000750 
+2025-11-11 05:18:26,245 - GCN-Enhanced-v4-RichFeatures Epoch 0300/400 [Hard Neg] | Loss: 0.6651 | Val Hits@20: 0.1851 | Test Hits@20: 0.2929 | Best Val: 0.2767 (epoch 120) | LR: 0.000750 
+2025-11-11 05:18:43,466 - GCN-Enhanced-v4-RichFeatures Epoch 0305/400 [Hard Neg] | Loss: 0.6884 | Val Hits@20: 0.1611 | Test Hits@20: 0.1704 | Best Val: 0.2767 (epoch 120) | LR: 0.000750 
+2025-11-11 05:19:00,652 - GCN-Enhanced-v4-RichFeatures Epoch 0310/400 [Hard Neg] | Loss: 0.6701 | Val Hits@20: 0.1667 | Test Hits@20: 0.1556 | Best Val: 0.2767 (epoch 120) | LR: 0.000750 
+2025-11-11 05:19:17,862 - GCN-Enhanced-v4-RichFeatures Epoch 0315/400 [Hard Neg] | Loss: 0.6718 | Val Hits@20: 0.1656 | Test Hits@20: 0.2057 | Best Val: 0.2767 (epoch 120) | LR: 0.000750 
+2025-11-11 05:19:35,090 - GCN-Enhanced-v4-RichFeatures Epoch 0320/400 [Hard Neg] | Loss: 0.6714 | Val Hits@20: 0.1532 | Test Hits@20: 0.1478 | Best Val: 0.2767 (epoch 120) | LR: 0.000750 
+2025-11-11 05:19:35,090 - GCN-Enhanced-v4-RichFeatures: Early stopping at epoch 320 (no improvement for 40 eval steps)
+2025-11-11 05:19:35,090 - GCN-Enhanced-v4-RichFeatures FINAL: Best Val Hits@20 = 0.2767 | Test Hits@20 = 0.2418 (at epoch 120)
+2025-11-11 05:19:35,090 - 
+================================================================================
+2025-11-11 05:19:35,090 - FINAL RESULTS
+2025-11-11 05:19:35,090 - ================================================================================
+2025-11-11 05:19:35,090 - Model: GCN-Enhanced-v4-RichFeatures
+2025-11-11 05:19:35,090 - Configuration: Hidden Dim=192, Layers=3, Dropout=0.5
+2025-11-11 05:19:35,091 - 
+2025-11-11 05:19:35,091 - GCN-Enhanced-v4-RichFeatures:
+2025-11-11 05:19:35,091 -   Validation Hits@20: 0.2767
+2025-11-11 05:19:35,091 -   Test Hits@20: 0.2418
+2025-11-11 05:19:35,091 -   Val-Test Gap: 0.0349 (12.6% relative)
+2025-11-11 05:19:35,091 - ================================================================================
+2025-11-11 05:19:35,091 - 
+================================================================================
+2025-11-11 05:19:35,091 - Performance Improvements (v4 - Rich Features)
+2025-11-11 05:19:35,091 - ================================================================================
+2025-11-11 05:19:35,091 - 1. Rich Structural Features (6 dimensions):
+2025-11-11 05:19:35,091 -    - Node degree (log-normalized)
+2025-11-11 05:19:35,091 -    - Clustering coefficient (triangle density)
+2025-11-11 05:19:35,091 -    - Core number (k-core importance)
+2025-11-11 05:19:35,091 -    - PageRank (global importance)
+2025-11-11 05:19:35,091 -    - Neighbor degree statistics (mean/max)
+2025-11-11 05:19:35,091 -    → Provides strong inductive bias for link prediction
+2025-11-11 05:19:35,091 - 
+2025-11-11 05:19:35,091 - 2. Multi-Strategy Decoder:
+2025-11-11 05:19:35,091 -    - Hadamard product scoring
+2025-11-11 05:19:35,092 -    - Concatenation-based scoring
+2025-11-11 05:19:35,092 -    - Bilinear scoring
+2025-11-11 05:19:35,092 -    - Learnable weighted combination of strategies
+2025-11-11 05:19:35,092 -    → Captures different aspects of node relationships
+2025-11-11 05:19:35,092 - 
+2025-11-11 05:19:35,092 - 3. Increased Model Capacity:
+2025-11-11 05:19:35,092 -    - Hidden dim: 128 → 192
+2025-11-11 05:19:35,092 -    - Rich features justify larger model
+2025-11-11 05:19:35,092 -    - Feature projection MLP for structural features
+2025-11-11 05:19:35,092 - 
+2025-11-11 05:19:35,092 - 4. Balanced Regularization:
+2025-11-11 05:19:35,092 -    - Encoder dropout: 0.5 (reduced from 0.6)
+2025-11-11 05:19:35,092 -    - Decoder dropout: 0.4 (reduced from 0.5)
+2025-11-11 05:19:35,092 -    - Edge dropout: 0.15 (reduced from 0.2)
+2025-11-11 05:19:35,092 -    - Feature dropout: 0.1 (NEW!)
+2025-11-11 05:19:35,092 -    - Embedding L2: 0.005 (reduced from 0.01)
+2025-11-11 05:19:35,092 -    → Less aggressive regularization since features reduce overfitting
+2025-11-11 05:19:35,092 - 
+2025-11-11 05:19:35,092 - 5. Stable Training:
+2025-11-11 05:19:35,092 -    - Learning rate: 0.003
+2025-11-11 05:19:35,092 -    - Hard negative ratio: 0.15 (reduced from 0.3 for stability)
+2025-11-11 05:19:35,092 -    - Hard negative warmup: 20 epochs (increased)
+2025-11-11 05:19:35,093 -    - LR scheduler patience: 15 (more patient)
+2025-11-11 05:19:35,093 - ================================================================================
+2025-11-11 05:19:35,093 - 
+================================================================================
+2025-11-11 05:19:35,093 - Training and evaluation completed successfully!
+2025-11-11 05:19:35,093 - Results logged to: logs/results_20251111_045725.log
+2025-11-11 05:19:35,093 - ================================================================================
