@@ -1,0 +1,136 @@
+2025-11-11 04:08:46,019 - Using device: cuda
+2025-11-11 04:08:46,019 - Logging results to: logs/results_20251111_040846.log
+2025-11-11 04:08:46,019 - Loading dataset ogbl-ddi...
+2025-11-11 04:08:46,106 - Dataset loaded: 4267 nodes
+2025-11-11 04:08:46,266 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 04:08:46,267 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 04:08:46,287 - Added self-loops: Total edges now = 1072178
+2025-11-11 04:08:46,323 - Computed node degree features: mean=4.54, std=1.77
+2025-11-11 04:08:46,325 - ================================================================================
+2025-11-11 04:08:46,325 - MODEL CONFIGURATION - GCN-Enhanced-v3-AntiOverfit
+2025-11-11 04:08:46,325 - ================================================================================
+2025-11-11 04:08:46,325 - Architecture:
+2025-11-11 04:08:46,325 -   Model: GCN-Enhanced-v3-AntiOverfit
+2025-11-11 04:08:46,325 -   Decoder: simplified_hadamard (simplified 2-layer MLP)
+2025-11-11 04:08:46,325 -   Hidden Dim: 128, Layers: 3
+2025-11-11 04:08:46,325 -   Dropout: 0.6, Decoder Dropout: 0.5
+2025-11-11 04:08:46,325 -   Self-loops: True, Scaled Residual: True
+2025-11-11 04:08:46,325 -   Node Features: Degree features (log-normalized)
+2025-11-11 04:08:46,325 - 
+2025-11-11 04:08:46,326 - Training:
+2025-11-11 04:08:46,326 -   Epochs: 300, Patience: 30
+2025-11-11 04:08:46,326 -   Learning Rate: 0.005, Weight Decay: 0.0001
+2025-11-11 04:08:46,326 -   Edge Dropout: 0.2, Embedding L2: 0.01
+2025-11-11 04:08:46,326 -   Hard Negatives: True (ratio=0.3, warmup=10)
+2025-11-11 04:08:46,326 -   Scheduler: factor=0.5, patience=10
+2025-11-11 04:08:46,326 - 
+2025-11-11 04:08:46,326 - Dataset:
+2025-11-11 04:08:46,326 -   Nodes: 4267
+2025-11-11 04:08:46,326 -   Train Edges: 1067911
+2025-11-11 04:08:46,326 -   Val Edges: 133489, Test Edges: 133489
+2025-11-11 04:08:46,326 - ================================================================================
+2025-11-11 04:08:46,368 - Starting training for GCN-Enhanced-v3-AntiOverfit (epochs=300, lr=0.005, patience=30, hard_neg=True)
+2025-11-11 04:08:48,414 - GCN-Enhanced-v3-AntiOverfit Epoch 0001/300 [Random Neg] | Loss: 1.5974 | Val Hits@20: 0.0155 | Test Hits@20: 0.0243 | Best Val: 0.0155 (epoch 1) | LR: 0.005000 🔥
+2025-11-11 04:08:54,926 - GCN-Enhanced-v3-AntiOverfit Epoch 0005/300 [Random Neg] | Loss: 1.1838 | Val Hits@20: 0.0184 | Test Hits@20: 0.0262 | Best Val: 0.0184 (epoch 5) | LR: 0.005000 🔥
+2025-11-11 04:09:02,990 - GCN-Enhanced-v3-AntiOverfit Epoch 0010/300 [Random Neg] | Loss: 1.0849 | Val Hits@20: 0.0207 | Test Hits@20: 0.0302 | Best Val: 0.0207 (epoch 10) | LR: 0.005000 🔥
+2025-11-11 04:09:16,721 - GCN-Enhanced-v3-AntiOverfit Epoch 0015/300 [Hard Neg] | Loss: 1.2191 | Val Hits@20: 0.0204 | Test Hits@20: 0.0386 | Best Val: 0.0207 (epoch 10) | LR: 0.005000 
+2025-11-11 04:09:30,337 - GCN-Enhanced-v3-AntiOverfit Epoch 0020/300 [Hard Neg] | Loss: 1.1853 | Val Hits@20: 0.0201 | Test Hits@20: 0.0297 | Best Val: 0.0207 (epoch 10) | LR: 0.005000 
+2025-11-11 04:09:43,930 - GCN-Enhanced-v3-AntiOverfit Epoch 0025/300 [Hard Neg] | Loss: 1.1601 | Val Hits@20: 0.0330 | Test Hits@20: 0.0093 | Best Val: 0.0330 (epoch 25) | LR: 0.005000 🔥
+2025-11-11 04:09:57,655 - GCN-Enhanced-v3-AntiOverfit Epoch 0030/300 [Hard Neg] | Loss: 1.1518 | Val Hits@20: 0.0358 | Test Hits@20: 0.0102 | Best Val: 0.0358 (epoch 30) | LR: 0.005000 🔥
+2025-11-11 04:10:11,311 - GCN-Enhanced-v3-AntiOverfit Epoch 0035/300 [Hard Neg] | Loss: 1.1285 | Val Hits@20: 0.0002 | Test Hits@20: 0.0001 | Best Val: 0.0358 (epoch 30) | LR: 0.005000 
+2025-11-11 04:10:25,040 - GCN-Enhanced-v3-AntiOverfit Epoch 0040/300 [Hard Neg] | Loss: 1.1175 | Val Hits@20: 0.0003 | Test Hits@20: 0.0002 | Best Val: 0.0358 (epoch 30) | LR: 0.005000 
+2025-11-11 04:10:38,711 - GCN-Enhanced-v3-AntiOverfit Epoch 0045/300 [Hard Neg] | Loss: 1.1021 | Val Hits@20: 0.0154 | Test Hits@20: 0.0253 | Best Val: 0.0358 (epoch 30) | LR: 0.005000 
+2025-11-11 04:10:52,443 - GCN-Enhanced-v3-AntiOverfit Epoch 0050/300 [Hard Neg] | Loss: 1.0876 | Val Hits@20: 0.0316 | Test Hits@20: 0.0413 | Best Val: 0.0358 (epoch 30) | LR: 0.005000 
+2025-11-11 04:11:06,069 - GCN-Enhanced-v3-AntiOverfit Epoch 0055/300 [Hard Neg] | Loss: 1.0744 | Val Hits@20: 0.0258 | Test Hits@20: 0.0599 | Best Val: 0.0358 (epoch 30) | LR: 0.005000 
+2025-11-11 04:11:19,771 - GCN-Enhanced-v3-AntiOverfit Epoch 0060/300 [Hard Neg] | Loss: 1.0618 | Val Hits@20: 0.1637 | Test Hits@20: 0.1033 | Best Val: 0.1637 (epoch 60) | LR: 0.005000 🔥
+2025-11-11 04:11:33,375 - GCN-Enhanced-v3-AntiOverfit Epoch 0065/300 [Hard Neg] | Loss: 1.0660 | Val Hits@20: 0.0860 | Test Hits@20: 0.0463 | Best Val: 0.1637 (epoch 60) | LR: 0.005000 
+2025-11-11 04:11:46,999 - GCN-Enhanced-v3-AntiOverfit Epoch 0070/300 [Hard Neg] | Loss: 1.0461 | Val Hits@20: 0.0531 | Test Hits@20: 0.0340 | Best Val: 0.1637 (epoch 60) | LR: 0.005000 
+2025-11-11 04:12:00,676 - GCN-Enhanced-v3-AntiOverfit Epoch 0075/300 [Hard Neg] | Loss: 1.0497 | Val Hits@20: 0.0517 | Test Hits@20: 0.0643 | Best Val: 0.1637 (epoch 60) | LR: 0.005000 
+2025-11-11 04:12:14,229 - GCN-Enhanced-v3-AntiOverfit Epoch 0080/300 [Hard Neg] | Loss: 1.0369 | Val Hits@20: 0.0718 | Test Hits@20: 0.0525 | Best Val: 0.1637 (epoch 60) | LR: 0.005000 
+2025-11-11 04:12:27,739 - GCN-Enhanced-v3-AntiOverfit Epoch 0085/300 [Hard Neg] | Loss: 1.0268 | Val Hits@20: 0.1291 | Test Hits@20: 0.0876 | Best Val: 0.1637 (epoch 60) | LR: 0.005000 
+2025-11-11 04:12:41,559 - GCN-Enhanced-v3-AntiOverfit Epoch 0090/300 [Hard Neg] | Loss: 1.0490 | Val Hits@20: 0.0865 | Test Hits@20: 0.0705 | Best Val: 0.1637 (epoch 60) | LR: 0.005000 
+2025-11-11 04:12:55,197 - GCN-Enhanced-v3-AntiOverfit Epoch 0095/300 [Hard Neg] | Loss: 1.0345 | Val Hits@20: 0.0729 | Test Hits@20: 0.1150 | Best Val: 0.1637 (epoch 60) | LR: 0.005000 
+2025-11-11 04:13:08,799 - GCN-Enhanced-v3-AntiOverfit Epoch 0100/300 [Hard Neg] | Loss: 1.0298 | Val Hits@20: 0.0324 | Test Hits@20: 0.0824 | Best Val: 0.1637 (epoch 60) | LR: 0.005000 
+2025-11-11 04:13:22,471 - GCN-Enhanced-v3-AntiOverfit Epoch 0105/300 [Hard Neg] | Loss: 1.0190 | Val Hits@20: 0.1377 | Test Hits@20: 0.1774 | Best Val: 0.1637 (epoch 60) | LR: 0.005000 
+2025-11-11 04:13:35,985 - GCN-Enhanced-v3-AntiOverfit Epoch 0110/300 [Hard Neg] | Loss: 1.0142 | Val Hits@20: 0.1690 | Test Hits@20: 0.2025 | Best Val: 0.1690 (epoch 110) | LR: 0.005000 🔥
+2025-11-11 04:13:49,588 - GCN-Enhanced-v3-AntiOverfit Epoch 0115/300 [Hard Neg] | Loss: 1.0097 | Val Hits@20: 0.2275 | Test Hits@20: 0.1475 | Best Val: 0.2275 (epoch 115) | LR: 0.005000 🔥
+2025-11-11 04:14:03,145 - GCN-Enhanced-v3-AntiOverfit Epoch 0120/300 [Hard Neg] | Loss: 1.0082 | Val Hits@20: 0.2189 | Test Hits@20: 0.1882 | Best Val: 0.2275 (epoch 115) | LR: 0.005000 
+2025-11-11 04:14:16,815 - GCN-Enhanced-v3-AntiOverfit Epoch 0125/300 [Hard Neg] | Loss: 1.0091 | Val Hits@20: 0.2238 | Test Hits@20: 0.1979 | Best Val: 0.2275 (epoch 115) | LR: 0.005000 
+2025-11-11 04:14:30,623 - GCN-Enhanced-v3-AntiOverfit Epoch 0130/300 [Hard Neg] | Loss: 0.9978 | Val Hits@20: 0.2121 | Test Hits@20: 0.1861 | Best Val: 0.2275 (epoch 115) | LR: 0.005000 
+2025-11-11 04:14:44,355 - GCN-Enhanced-v3-AntiOverfit Epoch 0135/300 [Hard Neg] | Loss: 0.9869 | Val Hits@20: 0.2451 | Test Hits@20: 0.2480 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 🔥
+2025-11-11 04:14:57,969 - GCN-Enhanced-v3-AntiOverfit Epoch 0140/300 [Hard Neg] | Loss: 0.9880 | Val Hits@20: 0.1516 | Test Hits@20: 0.1741 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 
+2025-11-11 04:15:11,613 - GCN-Enhanced-v3-AntiOverfit Epoch 0145/300 [Hard Neg] | Loss: 0.9752 | Val Hits@20: 0.1450 | Test Hits@20: 0.1753 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 
+2025-11-11 04:15:25,264 - GCN-Enhanced-v3-AntiOverfit Epoch 0150/300 [Hard Neg] | Loss: 0.9808 | Val Hits@20: 0.1667 | Test Hits@20: 0.1786 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 
+2025-11-11 04:15:39,004 - GCN-Enhanced-v3-AntiOverfit Epoch 0155/300 [Hard Neg] | Loss: 0.9703 | Val Hits@20: 0.0245 | Test Hits@20: 0.0401 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 
+2025-11-11 04:15:52,675 - GCN-Enhanced-v3-AntiOverfit Epoch 0160/300 [Hard Neg] | Loss: 0.9748 | Val Hits@20: 0.0268 | Test Hits@20: 0.0427 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 
+2025-11-11 04:16:06,413 - GCN-Enhanced-v3-AntiOverfit Epoch 0165/300 [Hard Neg] | Loss: 0.9654 | Val Hits@20: 0.1345 | Test Hits@20: 0.1723 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 
+2025-11-11 04:16:20,080 - GCN-Enhanced-v3-AntiOverfit Epoch 0170/300 [Hard Neg] | Loss: 0.9677 | Val Hits@20: 0.0143 | Test Hits@20: 0.0228 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 
+2025-11-11 04:16:33,653 - GCN-Enhanced-v3-AntiOverfit Epoch 0175/300 [Hard Neg] | Loss: 0.9556 | Val Hits@20: 0.2036 | Test Hits@20: 0.2086 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 
+2025-11-11 04:16:47,250 - GCN-Enhanced-v3-AntiOverfit Epoch 0180/300 [Hard Neg] | Loss: 0.9534 | Val Hits@20: 0.0121 | Test Hits@20: 0.0229 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 
+2025-11-11 04:17:01,037 - GCN-Enhanced-v3-AntiOverfit Epoch 0185/300 [Hard Neg] | Loss: 0.9470 | Val Hits@20: 0.0398 | Test Hits@20: 0.0835 | Best Val: 0.2451 (epoch 135) | LR: 0.005000 
+2025-11-11 04:17:14,797 - GCN-Enhanced-v3-AntiOverfit Epoch 0190/300 [Hard Neg] | Loss: 0.9423 | Val Hits@20: 0.1243 | Test Hits@20: 0.1285 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:17:28,486 - GCN-Enhanced-v3-AntiOverfit Epoch 0195/300 [Hard Neg] | Loss: 0.9550 | Val Hits@20: 0.1390 | Test Hits@20: 0.1753 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:17:42,168 - GCN-Enhanced-v3-AntiOverfit Epoch 0200/300 [Hard Neg] | Loss: 0.9319 | Val Hits@20: 0.1215 | Test Hits@20: 0.0984 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:17:55,703 - GCN-Enhanced-v3-AntiOverfit Epoch 0205/300 [Hard Neg] | Loss: 0.9369 | Val Hits@20: 0.1432 | Test Hits@20: 0.1573 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:18:09,267 - GCN-Enhanced-v3-AntiOverfit Epoch 0210/300 [Hard Neg] | Loss: 0.9348 | Val Hits@20: 0.2093 | Test Hits@20: 0.1331 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:18:22,987 - GCN-Enhanced-v3-AntiOverfit Epoch 0215/300 [Hard Neg] | Loss: 0.9306 | Val Hits@20: 0.0827 | Test Hits@20: 0.0302 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:18:36,743 - GCN-Enhanced-v3-AntiOverfit Epoch 0220/300 [Hard Neg] | Loss: 0.9302 | Val Hits@20: 0.0223 | Test Hits@20: 0.0187 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:18:50,453 - GCN-Enhanced-v3-AntiOverfit Epoch 0225/300 [Hard Neg] | Loss: 0.9274 | Val Hits@20: 0.1428 | Test Hits@20: 0.0884 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:19:04,104 - GCN-Enhanced-v3-AntiOverfit Epoch 0230/300 [Hard Neg] | Loss: 0.9251 | Val Hits@20: 0.0500 | Test Hits@20: 0.0736 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:19:17,758 - GCN-Enhanced-v3-AntiOverfit Epoch 0235/300 [Hard Neg] | Loss: 0.9332 | Val Hits@20: 0.0422 | Test Hits@20: 0.0206 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:19:31,398 - GCN-Enhanced-v3-AntiOverfit Epoch 0240/300 [Hard Neg] | Loss: 0.9346 | Val Hits@20: 0.1199 | Test Hits@20: 0.0636 | Best Val: 0.2451 (epoch 135) | LR: 0.002500 
+2025-11-11 04:19:44,971 - GCN-Enhanced-v3-AntiOverfit Epoch 0245/300 [Hard Neg] | Loss: 0.9298 | Val Hits@20: 0.2060 | Test Hits@20: 0.0772 | Best Val: 0.2451 (epoch 135) | LR: 0.001250 
+2025-11-11 04:19:58,592 - GCN-Enhanced-v3-AntiOverfit Epoch 0250/300 [Hard Neg] | Loss: 0.9109 | Val Hits@20: 0.0598 | Test Hits@20: 0.0839 | Best Val: 0.2451 (epoch 135) | LR: 0.001250 
+2025-11-11 04:20:12,076 - GCN-Enhanced-v3-AntiOverfit Epoch 0255/300 [Hard Neg] | Loss: 0.9176 | Val Hits@20: 0.1726 | Test Hits@20: 0.1184 | Best Val: 0.2451 (epoch 135) | LR: 0.001250 
+2025-11-11 04:20:25,658 - GCN-Enhanced-v3-AntiOverfit Epoch 0260/300 [Hard Neg] | Loss: 0.9195 | Val Hits@20: 0.2460 | Test Hits@20: 0.1459 | Best Val: 0.2460 (epoch 260) | LR: 0.001250 🔥
+2025-11-11 04:20:39,154 - GCN-Enhanced-v3-AntiOverfit Epoch 0265/300 [Hard Neg] | Loss: 0.9046 | Val Hits@20: 0.0698 | Test Hits@20: 0.0171 | Best Val: 0.2460 (epoch 260) | LR: 0.001250 
+2025-11-11 04:20:52,731 - GCN-Enhanced-v3-AntiOverfit Epoch 0270/300 [Hard Neg] | Loss: 0.9035 | Val Hits@20: 0.0481 | Test Hits@20: 0.0107 | Best Val: 0.2460 (epoch 260) | LR: 0.001250 
+2025-11-11 04:21:06,294 - GCN-Enhanced-v3-AntiOverfit Epoch 0275/300 [Hard Neg] | Loss: 0.9064 | Val Hits@20: 0.0550 | Test Hits@20: 0.0144 | Best Val: 0.2460 (epoch 260) | LR: 0.001250 
+2025-11-11 04:21:19,929 - GCN-Enhanced-v3-AntiOverfit Epoch 0280/300 [Hard Neg] | Loss: 0.9008 | Val Hits@20: 0.0199 | Test Hits@20: 0.0042 | Best Val: 0.2460 (epoch 260) | LR: 0.001250 
+2025-11-11 04:21:33,442 - GCN-Enhanced-v3-AntiOverfit Epoch 0285/300 [Hard Neg] | Loss: 0.9048 | Val Hits@20: 0.1919 | Test Hits@20: 0.0988 | Best Val: 0.2460 (epoch 260) | LR: 0.001250 
+2025-11-11 04:21:46,971 - GCN-Enhanced-v3-AntiOverfit Epoch 0290/300 [Hard Neg] | Loss: 0.9056 | Val Hits@20: 0.0938 | Test Hits@20: 0.0852 | Best Val: 0.2460 (epoch 260) | LR: 0.001250 
+2025-11-11 04:22:00,506 - GCN-Enhanced-v3-AntiOverfit Epoch 0295/300 [Hard Neg] | Loss: 0.8993 | Val Hits@20: 0.0270 | Test Hits@20: 0.0250 | Best Val: 0.2460 (epoch 260) | LR: 0.001250 
+2025-11-11 04:22:14,091 - GCN-Enhanced-v3-AntiOverfit Epoch 0300/300 [Hard Neg] | Loss: 0.9007 | Val Hits@20: 0.1008 | Test Hits@20: 0.0471 | Best Val: 0.2460 (epoch 260) | LR: 0.001250 
+2025-11-11 04:22:14,092 - GCN-Enhanced-v3-AntiOverfit FINAL: Best Val Hits@20 = 0.2460 | Test Hits@20 = 0.1459 (at epoch 260)
+2025-11-11 04:22:14,092 - 
+================================================================================
+2025-11-11 04:22:14,092 - FINAL RESULTS
+2025-11-11 04:22:14,092 - ================================================================================
+2025-11-11 04:22:14,092 - Model: GCN-Enhanced-v3-AntiOverfit
+2025-11-11 04:22:14,093 - Configuration: Hidden Dim=128, Layers=3, Dropout=0.6
+2025-11-11 04:22:14,093 - 
+2025-11-11 04:22:14,093 - GCN-Enhanced-v3-AntiOverfit:
+2025-11-11 04:22:14,093 -   Validation Hits@20: 0.2460
+2025-11-11 04:22:14,093 -   Test Hits@20: 0.1459
+2025-11-11 04:22:14,093 -   Val-Test Gap: 0.1001 (40.7% relative)
+2025-11-11 04:22:14,093 - ================================================================================
+2025-11-11 04:22:14,093 - 
+================================================================================
+2025-11-11 04:22:14,093 - Anti-Overfitting Improvements (v3)
+2025-11-11 04:22:14,093 - ================================================================================
+2025-11-11 04:22:14,093 - 1. Simplified Decoder Architecture:
+2025-11-11 04:22:14,093 -    - Reduced from 3-layer to 2-layer MLP (less capacity)
+2025-11-11 04:22:14,093 -    - Simple Hadamard product scoring (no complex multi-strategy)
+2025-11-11 04:22:14,093 -    - Increased decoder dropout: 0.3 → 0.5
+2025-11-11 04:22:14,093 - 
+2025-11-11 04:22:14,093 - 2. Added Structural Features:
+2025-11-11 04:22:14,093 -    - Node degree features (log-normalized)
+2025-11-11 04:22:14,093 -    - Provides inductive bias for link prediction
+2025-11-11 04:22:14,093 -    - Reduces reliance on pure memorization
+2025-11-11 04:22:14,094 - 
+2025-11-11 04:22:14,094 - 3. Strong Regularization:
+2025-11-11 04:22:14,094 -    - Encoder dropout: 0.4 → 0.6
+2025-11-11 04:22:14,094 -    - Edge dropout: 0.15 → 0.2
+2025-11-11 04:22:14,094 -    - Embedding L2 regularization: 0.01 (NEWLY APPLIED!)
+2025-11-11 04:22:14,094 -    - Weight decay: 5e-5 → 0.0001
+2025-11-11 04:22:14,094 - 
+2025-11-11 04:22:14,094 - 4. Improved Training Dynamics:
+2025-11-11 04:22:14,094 -    - Learning rate: 0.01 → 0.005 (slower, more stable)
+2025-11-11 04:22:14,094 -    - Hard negative mining ENABLED (ratio=0.3, warmup=10)
+2025-11-11 04:22:14,094 -    - More aggressive early stopping (patience=30)
+2025-11-11 04:22:14,094 - ================================================================================
+2025-11-11 04:22:14,094 - 
+================================================================================
+2025-11-11 04:22:14,094 - Training and evaluation completed successfully!
+2025-11-11 04:22:14,094 - Results logged to: logs/results_20251111_040846.log
+2025-11-11 04:22:14,094 - ================================================================================

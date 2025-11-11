@@ -1,0 +1,10 @@
+2025-11-11 03:20:42,222 - Using device: cuda
+2025-11-11 03:20:42,222 - Logging results to: logs/results_20251111_032042.log
+2025-11-11 03:20:42,222 - Loading dataset ogbl-ddi...
+2025-11-11 03:20:42,313 - Dataset loaded: 4267 nodes
+2025-11-11 03:20:42,477 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 03:20:42,478 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 03:20:42,493 - ============================================================
+2025-11-11 03:20:42,493 - Training Improved GCN Model (hidden_dim=256, layers=4)
+2025-11-11 03:20:42,493 - ============================================================
+2025-11-11 03:20:42,554 - Starting training for GCN-Improved (epochs=500, lr=0.01, patience=50)

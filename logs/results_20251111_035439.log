@@ -1,0 +1,128 @@
+2025-11-11 03:54:39,046 - Using device: cuda
+2025-11-11 03:54:39,046 - Logging results to: logs/results_20251111_035439.log
+2025-11-11 03:54:39,046 - Loading dataset ogbl-ddi...
+2025-11-11 03:54:39,131 - Dataset loaded: 4267 nodes
+2025-11-11 03:54:39,289 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 03:54:39,289 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 03:54:39,309 - Added self-loops: Total edges now = 1072178
+2025-11-11 03:54:39,311 - ================================================================================
+2025-11-11 03:54:39,311 - MODEL CONFIGURATION - GCN-Enhanced-v2
+2025-11-11 03:54:39,311 - ================================================================================
+2025-11-11 03:54:39,311 - Architecture:
+2025-11-11 03:54:39,311 -   Model: GCN-Enhanced-v2
+2025-11-11 03:54:39,311 -   Decoder: multi_strategy
+2025-11-11 03:54:39,311 -   Hidden Dim: 128, Layers: 3
+2025-11-11 03:54:39,311 -   Dropout: 0.4, Decoder Dropout: 0.3
+2025-11-11 03:54:39,311 -   Self-loops: True, Scaled Residual: True
+2025-11-11 03:54:39,311 - 
+2025-11-11 03:54:39,311 - Training:
+2025-11-11 03:54:39,311 -   Epochs: 400, Patience: 50
+2025-11-11 03:54:39,311 -   Learning Rate: 0.01, Weight Decay: 5e-05
+2025-11-11 03:54:39,311 -   Edge Dropout: 0.15
+2025-11-11 03:54:39,311 -   Hard Negatives: False (ratio=0.2, warmup=20)
+2025-11-11 03:54:39,312 -   Scheduler: factor=0.5, patience=10
+2025-11-11 03:54:39,312 - 
+2025-11-11 03:54:39,312 - Dataset:
+2025-11-11 03:54:39,312 -   Nodes: 4267
+2025-11-11 03:54:39,312 -   Train Edges: 1067911
+2025-11-11 03:54:39,312 -   Val Edges: 133489, Test Edges: 133489
+2025-11-11 03:54:39,312 - ================================================================================
+2025-11-11 03:54:39,354 - Starting training for GCN-Enhanced-v2 (epochs=400, lr=0.01, patience=50, hard_neg=False)
+2025-11-11 03:54:41,643 - GCN-Enhanced-v2 Epoch 0001/400 [Random Neg] | Loss: 20.1074 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0000 (epoch 1) | LR: 0.010000 🔥
+2025-11-11 03:54:49,038 - GCN-Enhanced-v2 Epoch 0005/400 [Random Neg] | Loss: 6.7272 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0001 (epoch 5) | LR: 0.010000 🔥
+2025-11-11 03:54:58,130 - GCN-Enhanced-v2 Epoch 0010/400 [Random Neg] | Loss: 1.5197 | Val Hits@20: 0.0304 | Test Hits@20: 0.0067 | Best Val: 0.0304 (epoch 10) | LR: 0.010000 🔥
+2025-11-11 03:55:07,283 - GCN-Enhanced-v2 Epoch 0015/400 [Random Neg] | Loss: 0.6580 | Val Hits@20: 0.0392 | Test Hits@20: 0.0102 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 🔥
+2025-11-11 03:55:16,449 - GCN-Enhanced-v2 Epoch 0020/400 [Random Neg] | Loss: 0.2339 | Val Hits@20: 0.0004 | Test Hits@20: 0.0004 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 
+2025-11-11 03:55:25,542 - GCN-Enhanced-v2 Epoch 0025/400 [Random Neg] | Loss: 0.0859 | Val Hits@20: 0.0240 | Test Hits@20: 0.0052 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 
+2025-11-11 03:55:34,626 - GCN-Enhanced-v2 Epoch 0030/400 [Random Neg] | Loss: 0.0352 | Val Hits@20: 0.0008 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 
+2025-11-11 03:55:43,664 - GCN-Enhanced-v2 Epoch 0035/400 [Random Neg] | Loss: 0.0187 | Val Hits@20: 0.0002 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 
+2025-11-11 03:55:52,707 - GCN-Enhanced-v2 Epoch 0040/400 [Random Neg] | Loss: 0.0110 | Val Hits@20: 0.0005 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 
+2025-11-11 03:56:01,748 - GCN-Enhanced-v2 Epoch 0045/400 [Random Neg] | Loss: 0.0079 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 
+2025-11-11 03:56:10,841 - GCN-Enhanced-v2 Epoch 0050/400 [Random Neg] | Loss: 0.0068 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 
+2025-11-11 03:56:19,871 - GCN-Enhanced-v2 Epoch 0055/400 [Random Neg] | Loss: 0.0048 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 
+2025-11-11 03:56:28,907 - GCN-Enhanced-v2 Epoch 0060/400 [Random Neg] | Loss: 0.0038 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 
+2025-11-11 03:56:37,998 - GCN-Enhanced-v2 Epoch 0065/400 [Random Neg] | Loss: 0.0035 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.010000 
+2025-11-11 03:56:47,040 - GCN-Enhanced-v2 Epoch 0070/400 [Random Neg] | Loss: 0.0032 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:56:56,021 - GCN-Enhanced-v2 Epoch 0075/400 [Random Neg] | Loss: 0.0027 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:57:04,982 - GCN-Enhanced-v2 Epoch 0080/400 [Random Neg] | Loss: 0.0029 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:57:13,991 - GCN-Enhanced-v2 Epoch 0085/400 [Random Neg] | Loss: 0.0024 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:57:22,958 - GCN-Enhanced-v2 Epoch 0090/400 [Random Neg] | Loss: 0.0024 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:57:31,942 - GCN-Enhanced-v2 Epoch 0095/400 [Random Neg] | Loss: 0.0023 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:57:40,884 - GCN-Enhanced-v2 Epoch 0100/400 [Random Neg] | Loss: 0.0022 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:57:49,891 - GCN-Enhanced-v2 Epoch 0105/400 [Random Neg] | Loss: 0.0022 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:57:58,864 - GCN-Enhanced-v2 Epoch 0110/400 [Random Neg] | Loss: 0.0020 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:58:07,804 - GCN-Enhanced-v2 Epoch 0115/400 [Random Neg] | Loss: 0.0019 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:58:16,787 - GCN-Enhanced-v2 Epoch 0120/400 [Random Neg] | Loss: 0.0021 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.005000 
+2025-11-11 03:58:25,759 - GCN-Enhanced-v2 Epoch 0125/400 [Random Neg] | Loss: 0.0020 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 03:58:34,684 - GCN-Enhanced-v2 Epoch 0130/400 [Random Neg] | Loss: 0.0019 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 03:58:43,701 - GCN-Enhanced-v2 Epoch 0135/400 [Random Neg] | Loss: 0.0020 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 03:58:52,687 - GCN-Enhanced-v2 Epoch 0140/400 [Random Neg] | Loss: 0.0018 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 03:59:01,627 - GCN-Enhanced-v2 Epoch 0145/400 [Random Neg] | Loss: 0.0018 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 03:59:10,574 - GCN-Enhanced-v2 Epoch 0150/400 [Random Neg] | Loss: 0.0017 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 03:59:19,551 - GCN-Enhanced-v2 Epoch 0155/400 [Random Neg] | Loss: 0.0017 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 03:59:28,509 - GCN-Enhanced-v2 Epoch 0160/400 [Random Neg] | Loss: 0.0017 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 03:59:37,500 - GCN-Enhanced-v2 Epoch 0165/400 [Random Neg] | Loss: 0.0017 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 03:59:46,481 - GCN-Enhanced-v2 Epoch 0170/400 [Random Neg] | Loss: 0.0017 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 03:59:55,469 - GCN-Enhanced-v2 Epoch 0175/400 [Random Neg] | Loss: 0.0017 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.002500 
+2025-11-11 04:00:04,447 - GCN-Enhanced-v2 Epoch 0180/400 [Random Neg] | Loss: 0.0017 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:00:13,393 - GCN-Enhanced-v2 Epoch 0185/400 [Random Neg] | Loss: 0.0016 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:00:22,375 - GCN-Enhanced-v2 Epoch 0190/400 [Random Neg] | Loss: 0.0016 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:00:31,350 - GCN-Enhanced-v2 Epoch 0195/400 [Random Neg] | Loss: 0.0016 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:00:40,325 - GCN-Enhanced-v2 Epoch 0200/400 [Random Neg] | Loss: 0.0014 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:00:49,331 - GCN-Enhanced-v2 Epoch 0205/400 [Random Neg] | Loss: 0.0016 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:00:58,328 - GCN-Enhanced-v2 Epoch 0210/400 [Random Neg] | Loss: 0.0015 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:01:07,343 - GCN-Enhanced-v2 Epoch 0215/400 [Random Neg] | Loss: 0.0015 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:01:16,317 - GCN-Enhanced-v2 Epoch 0220/400 [Random Neg] | Loss: 0.0016 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:01:25,259 - GCN-Enhanced-v2 Epoch 0225/400 [Random Neg] | Loss: 0.0015 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:01:34,234 - GCN-Enhanced-v2 Epoch 0230/400 [Random Neg] | Loss: 0.0014 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.001250 
+2025-11-11 04:01:43,249 - GCN-Enhanced-v2 Epoch 0235/400 [Random Neg] | Loss: 0.0015 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.000625 
+2025-11-11 04:01:52,229 - GCN-Enhanced-v2 Epoch 0240/400 [Random Neg] | Loss: 0.0015 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.000625 
+2025-11-11 04:02:01,250 - GCN-Enhanced-v2 Epoch 0245/400 [Random Neg] | Loss: 0.0015 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.000625 
+2025-11-11 04:02:10,265 - GCN-Enhanced-v2 Epoch 0250/400 [Random Neg] | Loss: 0.0014 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.000625 
+2025-11-11 04:02:19,229 - GCN-Enhanced-v2 Epoch 0255/400 [Random Neg] | Loss: 0.0014 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.000625 
+2025-11-11 04:02:28,301 - GCN-Enhanced-v2 Epoch 0260/400 [Random Neg] | Loss: 0.0015 | Val Hits@20: 0.0001 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.000625 
+2025-11-11 04:02:37,351 - GCN-Enhanced-v2 Epoch 0265/400 [Random Neg] | Loss: 0.0014 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0392 (epoch 15) | LR: 0.000625 
+2025-11-11 04:02:37,351 - GCN-Enhanced-v2: Early stopping at epoch 265 (no improvement for 50 eval steps)
+2025-11-11 04:02:37,351 - GCN-Enhanced-v2 FINAL: Best Val Hits@20 = 0.0392 | Test Hits@20 = 0.0102 (at epoch 15)
+2025-11-11 04:02:37,351 - 
+================================================================================
+2025-11-11 04:02:37,352 - FINAL RESULTS
+2025-11-11 04:02:37,352 - ================================================================================
+2025-11-11 04:02:37,352 - Model: GCN-Enhanced-v2
+2025-11-11 04:02:37,352 - Configuration: Hidden Dim=128, Layers=3, Dropout=0.4
+2025-11-11 04:02:37,352 - 
+2025-11-11 04:02:37,352 - GCN-Enhanced-v2:
+2025-11-11 04:02:37,352 -   Validation Hits@20: 0.0392
+2025-11-11 04:02:37,352 -   Test Hits@20: 0.0102
+2025-11-11 04:02:37,352 -   Val-Test Gap: 0.0290 (73.9% relative)
+2025-11-11 04:02:37,352 - ================================================================================
+2025-11-11 04:02:37,352 - 
+================================================================================
+2025-11-11 04:02:37,352 - Changes Summary
+2025-11-11 04:02:37,352 - ================================================================================
+2025-11-11 04:02:37,353 - 1. Enhanced Edge Decoder:
+2025-11-11 04:02:37,353 -    - Multi-strategy scoring: Hadamard product + Concatenation + Dot product
+2025-11-11 04:02:37,353 -    - Deeper MLP with BatchNorm (3 layers)
+2025-11-11 04:02:37,353 -    - Learnable score weighting
+2025-11-11 04:02:37,353 - 
+2025-11-11 04:02:37,353 - 2. Improved Graph Structure:
+2025-11-11 04:02:37,353 -    - Added self-loops for better feature aggregation
+2025-11-11 04:02:37,353 -    - Scaled residual connections (0.5x) for gradient flow
+2025-11-11 04:02:37,353 -    - Increased edge dropout (0.15) for regularization
+2025-11-11 04:02:37,353 - 
+2025-11-11 04:02:37,353 - 3. Advanced Training:
+2025-11-11 04:02:37,353 -    - Hard negative mining (ratio=0.2) after 20 epochs
+2025-11-11 04:02:37,353 -    - Increased weight decay (5e-05) for regularization
+2025-11-11 04:02:37,353 -    - Less aggressive LR scheduling (patience=10)
+2025-11-11 04:02:37,353 -    - Extended training (400 epochs, patience=50)
+2025-11-11 04:02:37,354 - 
+2025-11-11 04:02:37,354 - 4. Better Regularization:
+2025-11-11 04:02:37,354 -    - Encoder dropout: 0.4
+2025-11-11 04:02:37,354 -    - Decoder dropout: 0.3
+2025-11-11 04:02:37,354 -    - Edge dropout: 0.15
+2025-11-11 04:02:37,354 - ================================================================================
+2025-11-11 04:02:37,354 - 
+================================================================================
+2025-11-11 04:02:37,354 - Training and evaluation completed successfully!
+2025-11-11 04:02:37,354 - Results logged to: logs/results_20251111_035439.log
+2025-11-11 04:02:37,354 - ================================================================================

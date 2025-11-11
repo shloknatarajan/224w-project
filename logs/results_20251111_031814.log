@@ -1,0 +1,10 @@
+2025-11-11 03:18:14,255 - Using device: cuda
+2025-11-11 03:18:14,255 - Logging results to: logs/results_20251111_031814.log
+2025-11-11 03:18:14,255 - Loading dataset ogbl-ddi...
+2025-11-11 03:18:14,346 - Dataset loaded: 4267 nodes
+2025-11-11 03:18:14,507 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 03:18:14,507 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 03:18:14,523 - ============================================================
+2025-11-11 03:18:14,524 - Training GCN Model with Jump Knowledge (hidden_dim=256, layers=4)
+2025-11-11 03:18:14,524 - ============================================================
+2025-11-11 03:18:14,587 - Starting training for GCN+JK (epochs=500, lr=0.01, patience=50)

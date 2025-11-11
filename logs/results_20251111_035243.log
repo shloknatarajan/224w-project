@@ -1,0 +1,30 @@
+2025-11-11 03:52:43,725 - Using device: cuda
+2025-11-11 03:52:43,725 - Logging results to: logs/results_20251111_035243.log
+2025-11-11 03:52:43,726 - Loading dataset ogbl-ddi...
+2025-11-11 03:52:43,811 - Dataset loaded: 4267 nodes
+2025-11-11 03:52:43,968 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 03:52:43,968 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 03:52:43,988 - Added self-loops: Total edges now = 1072178
+2025-11-11 03:52:43,990 - ================================================================================
+2025-11-11 03:52:43,990 - MODEL CONFIGURATION - GCN-Enhanced-v2
+2025-11-11 03:52:43,990 - ================================================================================
+2025-11-11 03:52:43,990 - Architecture:
+2025-11-11 03:52:43,990 -   Model: GCN-Enhanced-v2
+2025-11-11 03:52:43,990 -   Decoder: multi_strategy
+2025-11-11 03:52:43,990 -   Hidden Dim: 256, Layers: 4
+2025-11-11 03:52:43,990 -   Dropout: 0.4, Decoder Dropout: 0.3
+2025-11-11 03:52:43,990 -   Self-loops: True, Scaled Residual: True
+2025-11-11 03:52:43,990 - 
+2025-11-11 03:52:43,990 - Training:
+2025-11-11 03:52:43,990 -   Epochs: 600, Patience: 60
+2025-11-11 03:52:43,990 -   Learning Rate: 0.01, Weight Decay: 5e-05
+2025-11-11 03:52:43,990 -   Edge Dropout: 0.15
+2025-11-11 03:52:43,990 -   Hard Negatives: True (ratio=0.3, warmup=20)
+2025-11-11 03:52:43,991 -   Scheduler: factor=0.5, patience=10
+2025-11-11 03:52:43,991 - 
+2025-11-11 03:52:43,991 - Dataset:
+2025-11-11 03:52:43,991 -   Nodes: 4267
+2025-11-11 03:52:43,991 -   Train Edges: 1067911
+2025-11-11 03:52:43,991 -   Val Edges: 133489, Test Edges: 133489
+2025-11-11 03:52:43,991 - ================================================================================
+2025-11-11 03:52:44,045 - Starting training for GCN-Enhanced-v2 (epochs=600, lr=0.01, patience=60, hard_neg=True)

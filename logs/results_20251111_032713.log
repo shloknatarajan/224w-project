@@ -1,0 +1,127 @@
+2025-11-11 03:27:13,135 - Using device: cuda
+2025-11-11 03:27:13,135 - Logging results to: logs/results_20251111_032713.log
+2025-11-11 03:27:13,135 - Loading dataset ogbl-ddi...
+2025-11-11 03:27:13,225 - Dataset loaded: 4267 nodes
+2025-11-11 03:27:13,368 - Train pos edges: 1067911, Valid pos: 133489, Test pos: 133489
+2025-11-11 03:27:13,368 - Valid neg edges: 101882, Test neg: 95599
+2025-11-11 03:27:13,385 - ============================================================
+2025-11-11 03:27:13,385 - Training Improved GCN Model (hidden_dim=256, layers=4)
+2025-11-11 03:27:13,385 - ============================================================
+2025-11-11 03:27:13,446 - Starting training for GCN-Improved (epochs=500, lr=0.01, patience=50)
+2025-11-11 03:27:15,883 - GCN-Improved Epoch 0001/500 | Loss: 1.4580 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0000 (epoch 1) | LR: 0.010000
+2025-11-11 03:27:23,546 - GCN-Improved Epoch 0005/500 | Loss: 3.5654 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0000 (epoch 1) | LR: 0.010000
+2025-11-11 03:27:32,880 - GCN-Improved Epoch 0010/500 | Loss: 2.8892 | Val Hits@20: 0.0008 | Test Hits@20: 0.0016 | Best Val: 0.0008 (epoch 10) | LR: 0.010000
+2025-11-11 03:27:42,285 - GCN-Improved Epoch 0015/500 | Loss: 1.3032 | Val Hits@20: 0.0000 | Test Hits@20: 0.0000 | Best Val: 0.0008 (epoch 10) | LR: 0.010000
+2025-11-11 03:27:51,740 - GCN-Improved Epoch 0020/500 | Loss: 0.9341 | Val Hits@20: 0.0025 | Test Hits@20: 0.0009 | Best Val: 0.0025 (epoch 20) | LR: 0.010000
+2025-11-11 03:28:01,132 - GCN-Improved Epoch 0025/500 | Loss: 0.8353 | Val Hits@20: 0.0160 | Test Hits@20: 0.0152 | Best Val: 0.0160 (epoch 25) | LR: 0.010000
+2025-11-11 03:28:10,498 - GCN-Improved Epoch 0030/500 | Loss: 0.7815 | Val Hits@20: 0.0156 | Test Hits@20: 0.0098 | Best Val: 0.0160 (epoch 25) | LR: 0.010000
+2025-11-11 03:28:19,915 - GCN-Improved Epoch 0035/500 | Loss: 0.7079 | Val Hits@20: 0.0180 | Test Hits@20: 0.0094 | Best Val: 0.0180 (epoch 35) | LR: 0.010000
+2025-11-11 03:28:29,398 - GCN-Improved Epoch 0040/500 | Loss: 0.6597 | Val Hits@20: 0.0264 | Test Hits@20: 0.0127 | Best Val: 0.0264 (epoch 40) | LR: 0.010000
+2025-11-11 03:28:38,780 - GCN-Improved Epoch 0045/500 | Loss: 0.6195 | Val Hits@20: 0.0326 | Test Hits@20: 0.0201 | Best Val: 0.0326 (epoch 45) | LR: 0.010000
+2025-11-11 03:28:48,206 - GCN-Improved Epoch 0050/500 | Loss: 0.5840 | Val Hits@20: 0.0355 | Test Hits@20: 0.0280 | Best Val: 0.0355 (epoch 50) | LR: 0.010000
+2025-11-11 03:28:57,630 - GCN-Improved Epoch 0055/500 | Loss: 0.5583 | Val Hits@20: 0.0451 | Test Hits@20: 0.0364 | Best Val: 0.0451 (epoch 55) | LR: 0.010000
+2025-11-11 03:29:06,991 - GCN-Improved Epoch 0060/500 | Loss: 0.5330 | Val Hits@20: 0.0394 | Test Hits@20: 0.0315 | Best Val: 0.0451 (epoch 55) | LR: 0.010000
+2025-11-11 03:29:16,445 - GCN-Improved Epoch 0065/500 | Loss: 0.5108 | Val Hits@20: 0.0300 | Test Hits@20: 0.0297 | Best Val: 0.0451 (epoch 55) | LR: 0.010000
+2025-11-11 03:29:25,901 - GCN-Improved Epoch 0070/500 | Loss: 0.4936 | Val Hits@20: 0.0375 | Test Hits@20: 0.0279 | Best Val: 0.0451 (epoch 55) | LR: 0.010000
+2025-11-11 03:29:35,372 - GCN-Improved Epoch 0075/500 | Loss: 0.4834 | Val Hits@20: 0.0485 | Test Hits@20: 0.0484 | Best Val: 0.0485 (epoch 75) | LR: 0.010000
+2025-11-11 03:29:44,844 - GCN-Improved Epoch 0080/500 | Loss: 0.4729 | Val Hits@20: 0.0763 | Test Hits@20: 0.0582 | Best Val: 0.0763 (epoch 80) | LR: 0.010000
+2025-11-11 03:29:53,749 - GCN-Improved Epoch 0085/500 | Loss: 0.4638 | Val Hits@20: 0.0832 | Test Hits@20: 0.0596 | Best Val: 0.0832 (epoch 85) | LR: 0.010000
+2025-11-11 03:30:02,471 - GCN-Improved Epoch 0090/500 | Loss: 0.4584 | Val Hits@20: 0.1320 | Test Hits@20: 0.0794 | Best Val: 0.1320 (epoch 90) | LR: 0.010000
+2025-11-11 03:30:11,134 - GCN-Improved Epoch 0095/500 | Loss: 0.4503 | Val Hits@20: 0.1237 | Test Hits@20: 0.0824 | Best Val: 0.1320 (epoch 90) | LR: 0.010000
+2025-11-11 03:30:19,923 - GCN-Improved Epoch 0100/500 | Loss: 0.4484 | Val Hits@20: 0.1606 | Test Hits@20: 0.0998 | Best Val: 0.1606 (epoch 100) | LR: 0.010000
+2025-11-11 03:30:28,684 - GCN-Improved Epoch 0105/500 | Loss: 0.4354 | Val Hits@20: 0.1300 | Test Hits@20: 0.0967 | Best Val: 0.1606 (epoch 100) | LR: 0.010000
+2025-11-11 03:30:37,414 - GCN-Improved Epoch 0110/500 | Loss: 0.4357 | Val Hits@20: 0.1768 | Test Hits@20: 0.0882 | Best Val: 0.1768 (epoch 110) | LR: 0.010000
+2025-11-11 03:30:46,163 - GCN-Improved Epoch 0115/500 | Loss: 0.4265 | Val Hits@20: 0.1831 | Test Hits@20: 0.0883 | Best Val: 0.1831 (epoch 115) | LR: 0.010000
+2025-11-11 03:30:54,885 - GCN-Improved Epoch 0120/500 | Loss: 0.4209 | Val Hits@20: 0.1570 | Test Hits@20: 0.0875 | Best Val: 0.1831 (epoch 115) | LR: 0.010000
+2025-11-11 03:31:03,547 - GCN-Improved Epoch 0125/500 | Loss: 0.4169 | Val Hits@20: 0.1756 | Test Hits@20: 0.0769 | Best Val: 0.1831 (epoch 115) | LR: 0.010000
+2025-11-11 03:31:12,251 - GCN-Improved Epoch 0130/500 | Loss: 0.4103 | Val Hits@20: 0.1590 | Test Hits@20: 0.0777 | Best Val: 0.1831 (epoch 115) | LR: 0.010000
+2025-11-11 03:31:20,968 - GCN-Improved Epoch 0135/500 | Loss: 0.4056 | Val Hits@20: 0.1543 | Test Hits@20: 0.0943 | Best Val: 0.1831 (epoch 115) | LR: 0.010000
+2025-11-11 03:31:29,705 - GCN-Improved Epoch 0140/500 | Loss: 0.4006 | Val Hits@20: 0.1822 | Test Hits@20: 0.1115 | Best Val: 0.1831 (epoch 115) | LR: 0.010000
+2025-11-11 03:31:38,426 - GCN-Improved Epoch 0145/500 | Loss: 0.3987 | Val Hits@20: 0.2079 | Test Hits@20: 0.1071 | Best Val: 0.2079 (epoch 145) | LR: 0.010000
+2025-11-11 03:31:47,173 - GCN-Improved Epoch 0150/500 | Loss: 0.3936 | Val Hits@20: 0.1789 | Test Hits@20: 0.0973 | Best Val: 0.2079 (epoch 145) | LR: 0.010000
+2025-11-11 03:31:55,915 - GCN-Improved Epoch 0155/500 | Loss: 0.3904 | Val Hits@20: 0.2427 | Test Hits@20: 0.1270 | Best Val: 0.2427 (epoch 155) | LR: 0.010000
+2025-11-11 03:32:04,648 - GCN-Improved Epoch 0160/500 | Loss: 0.3854 | Val Hits@20: 0.2224 | Test Hits@20: 0.1113 | Best Val: 0.2427 (epoch 155) | LR: 0.010000
+2025-11-11 03:32:13,344 - GCN-Improved Epoch 0165/500 | Loss: 0.3888 | Val Hits@20: 0.1678 | Test Hits@20: 0.1173 | Best Val: 0.2427 (epoch 155) | LR: 0.010000
+2025-11-11 03:32:22,093 - GCN-Improved Epoch 0170/500 | Loss: 0.3774 | Val Hits@20: 0.2649 | Test Hits@20: 0.1411 | Best Val: 0.2649 (epoch 170) | LR: 0.010000
+2025-11-11 03:32:30,846 - GCN-Improved Epoch 0175/500 | Loss: 0.3755 | Val Hits@20: 0.2042 | Test Hits@20: 0.1121 | Best Val: 0.2649 (epoch 170) | LR: 0.010000
+2025-11-11 03:32:39,488 - GCN-Improved Epoch 0180/500 | Loss: 0.3758 | Val Hits@20: 0.2194 | Test Hits@20: 0.0930 | Best Val: 0.2649 (epoch 170) | LR: 0.010000
+2025-11-11 03:32:48,148 - GCN-Improved Epoch 0185/500 | Loss: 0.3701 | Val Hits@20: 0.1887 | Test Hits@20: 0.1248 | Best Val: 0.2649 (epoch 170) | LR: 0.010000
+2025-11-11 03:32:56,832 - GCN-Improved Epoch 0190/500 | Loss: 0.3707 | Val Hits@20: 0.2531 | Test Hits@20: 0.1523 | Best Val: 0.2649 (epoch 170) | LR: 0.010000
+2025-11-11 03:33:05,467 - GCN-Improved Epoch 0195/500 | Loss: 0.3648 | Val Hits@20: 0.2650 | Test Hits@20: 0.1436 | Best Val: 0.2650 (epoch 195) | LR: 0.010000
+2025-11-11 03:33:14,158 - GCN-Improved Epoch 0200/500 | Loss: 0.3620 | Val Hits@20: 0.2551 | Test Hits@20: 0.1373 | Best Val: 0.2650 (epoch 195) | LR: 0.010000
+2025-11-11 03:33:22,876 - GCN-Improved Epoch 0205/500 | Loss: 0.3607 | Val Hits@20: 0.2195 | Test Hits@20: 0.1218 | Best Val: 0.2650 (epoch 195) | LR: 0.010000
+2025-11-11 03:33:31,580 - GCN-Improved Epoch 0210/500 | Loss: 0.3572 | Val Hits@20: 0.2290 | Test Hits@20: 0.1326 | Best Val: 0.2650 (epoch 195) | LR: 0.010000
+2025-11-11 03:33:40,203 - GCN-Improved Epoch 0215/500 | Loss: 0.3519 | Val Hits@20: 0.2953 | Test Hits@20: 0.1658 | Best Val: 0.2953 (epoch 215) | LR: 0.010000
+2025-11-11 03:33:48,824 - GCN-Improved Epoch 0220/500 | Loss: 0.3500 | Val Hits@20: 0.2569 | Test Hits@20: 0.1445 | Best Val: 0.2953 (epoch 215) | LR: 0.010000
+2025-11-11 03:33:57,503 - GCN-Improved Epoch 0225/500 | Loss: 0.3502 | Val Hits@20: 0.3057 | Test Hits@20: 0.1555 | Best Val: 0.3057 (epoch 225) | LR: 0.010000
+2025-11-11 03:34:06,201 - GCN-Improved Epoch 0230/500 | Loss: 0.3425 | Val Hits@20: 0.2596 | Test Hits@20: 0.1310 | Best Val: 0.3057 (epoch 225) | LR: 0.010000
+2025-11-11 03:34:14,821 - GCN-Improved Epoch 0235/500 | Loss: 0.3393 | Val Hits@20: 0.2747 | Test Hits@20: 0.1423 | Best Val: 0.3057 (epoch 225) | LR: 0.010000
+2025-11-11 03:34:23,490 - GCN-Improved Epoch 0240/500 | Loss: 0.3377 | Val Hits@20: 0.2147 | Test Hits@20: 0.1184 | Best Val: 0.3057 (epoch 225) | LR: 0.010000
+2025-11-11 03:34:32,168 - GCN-Improved Epoch 0245/500 | Loss: 0.3387 | Val Hits@20: 0.2452 | Test Hits@20: 0.1598 | Best Val: 0.3057 (epoch 225) | LR: 0.010000
+2025-11-11 03:34:40,806 - GCN-Improved Epoch 0250/500 | Loss: 0.3328 | Val Hits@20: 0.2622 | Test Hits@20: 0.1209 | Best Val: 0.3057 (epoch 225) | LR: 0.010000
+2025-11-11 03:34:49,428 - GCN-Improved Epoch 0255/500 | Loss: 0.3291 | Val Hits@20: 0.2926 | Test Hits@20: 0.1330 | Best Val: 0.3057 (epoch 225) | LR: 0.005000
+2025-11-11 03:34:58,090 - GCN-Improved Epoch 0260/500 | Loss: 0.3240 | Val Hits@20: 0.2980 | Test Hits@20: 0.1547 | Best Val: 0.3057 (epoch 225) | LR: 0.005000
+2025-11-11 03:35:06,771 - GCN-Improved Epoch 0265/500 | Loss: 0.3255 | Val Hits@20: 0.2682 | Test Hits@20: 0.1444 | Best Val: 0.3057 (epoch 225) | LR: 0.005000
+2025-11-11 03:35:15,431 - GCN-Improved Epoch 0270/500 | Loss: 0.3254 | Val Hits@20: 0.3105 | Test Hits@20: 0.1678 | Best Val: 0.3105 (epoch 270) | LR: 0.005000
+2025-11-11 03:35:24,087 - GCN-Improved Epoch 0275/500 | Loss: 0.3213 | Val Hits@20: 0.2956 | Test Hits@20: 0.1504 | Best Val: 0.3105 (epoch 270) | LR: 0.005000
+2025-11-11 03:35:32,809 - GCN-Improved Epoch 0280/500 | Loss: 0.3203 | Val Hits@20: 0.2866 | Test Hits@20: 0.1614 | Best Val: 0.3105 (epoch 270) | LR: 0.005000
+2025-11-11 03:35:41,458 - GCN-Improved Epoch 0285/500 | Loss: 0.3219 | Val Hits@20: 0.3205 | Test Hits@20: 0.1339 | Best Val: 0.3205 (epoch 285) | LR: 0.005000
+2025-11-11 03:35:50,125 - GCN-Improved Epoch 0290/500 | Loss: 0.3183 | Val Hits@20: 0.3165 | Test Hits@20: 0.1616 | Best Val: 0.3205 (epoch 285) | LR: 0.005000
+2025-11-11 03:35:58,865 - GCN-Improved Epoch 0295/500 | Loss: 0.3175 | Val Hits@20: 0.2768 | Test Hits@20: 0.1291 | Best Val: 0.3205 (epoch 285) | LR: 0.005000
+2025-11-11 03:36:07,604 - GCN-Improved Epoch 0300/500 | Loss: 0.3178 | Val Hits@20: 0.3320 | Test Hits@20: 0.1575 | Best Val: 0.3320 (epoch 300) | LR: 0.005000
+2025-11-11 03:36:16,379 - GCN-Improved Epoch 0305/500 | Loss: 0.3145 | Val Hits@20: 0.2572 | Test Hits@20: 0.1538 | Best Val: 0.3320 (epoch 300) | LR: 0.005000
+2025-11-11 03:36:25,072 - GCN-Improved Epoch 0310/500 | Loss: 0.3141 | Val Hits@20: 0.2867 | Test Hits@20: 0.1384 | Best Val: 0.3320 (epoch 300) | LR: 0.005000
+2025-11-11 03:36:33,777 - GCN-Improved Epoch 0315/500 | Loss: 0.3118 | Val Hits@20: 0.2585 | Test Hits@20: 0.1478 | Best Val: 0.3320 (epoch 300) | LR: 0.005000
+2025-11-11 03:36:42,430 - GCN-Improved Epoch 0320/500 | Loss: 0.3113 | Val Hits@20: 0.2566 | Test Hits@20: 0.1505 | Best Val: 0.3320 (epoch 300) | LR: 0.005000
+2025-11-11 03:36:51,073 - GCN-Improved Epoch 0325/500 | Loss: 0.3105 | Val Hits@20: 0.2868 | Test Hits@20: 0.1628 | Best Val: 0.3320 (epoch 300) | LR: 0.005000
+2025-11-11 03:36:59,735 - GCN-Improved Epoch 0330/500 | Loss: 0.3077 | Val Hits@20: 0.2770 | Test Hits@20: 0.1721 | Best Val: 0.3320 (epoch 300) | LR: 0.002500
+2025-11-11 03:37:08,511 - GCN-Improved Epoch 0335/500 | Loss: 0.3094 | Val Hits@20: 0.3187 | Test Hits@20: 0.1641 | Best Val: 0.3320 (epoch 300) | LR: 0.002500
+2025-11-11 03:37:17,168 - GCN-Improved Epoch 0340/500 | Loss: 0.3086 | Val Hits@20: 0.2859 | Test Hits@20: 0.1617 | Best Val: 0.3320 (epoch 300) | LR: 0.002500
+2025-11-11 03:37:25,892 - GCN-Improved Epoch 0345/500 | Loss: 0.3063 | Val Hits@20: 0.2693 | Test Hits@20: 0.1598 | Best Val: 0.3320 (epoch 300) | LR: 0.002500
+2025-11-11 03:37:34,566 - GCN-Improved Epoch 0350/500 | Loss: 0.3061 | Val Hits@20: 0.2788 | Test Hits@20: 0.1611 | Best Val: 0.3320 (epoch 300) | LR: 0.002500
+2025-11-11 03:37:43,222 - GCN-Improved Epoch 0355/500 | Loss: 0.3062 | Val Hits@20: 0.3139 | Test Hits@20: 0.1695 | Best Val: 0.3320 (epoch 300) | LR: 0.002500
+2025-11-11 03:37:51,932 - GCN-Improved Epoch 0360/500 | Loss: 0.3035 | Val Hits@20: 0.2708 | Test Hits@20: 0.1661 | Best Val: 0.3320 (epoch 300) | LR: 0.001250
+2025-11-11 03:38:00,626 - GCN-Improved Epoch 0365/500 | Loss: 0.3024 | Val Hits@20: 0.2940 | Test Hits@20: 0.1680 | Best Val: 0.3320 (epoch 300) | LR: 0.001250
+2025-11-11 03:38:09,335 - GCN-Improved Epoch 0370/500 | Loss: 0.3033 | Val Hits@20: 0.3151 | Test Hits@20: 0.1655 | Best Val: 0.3320 (epoch 300) | LR: 0.001250
+2025-11-11 03:38:18,074 - GCN-Improved Epoch 0375/500 | Loss: 0.3038 | Val Hits@20: 0.2901 | Test Hits@20: 0.1599 | Best Val: 0.3320 (epoch 300) | LR: 0.001250
+2025-11-11 03:38:26,775 - GCN-Improved Epoch 0380/500 | Loss: 0.3044 | Val Hits@20: 0.3189 | Test Hits@20: 0.1662 | Best Val: 0.3320 (epoch 300) | LR: 0.001250
+2025-11-11 03:38:35,508 - GCN-Improved Epoch 0385/500 | Loss: 0.3040 | Val Hits@20: 0.3127 | Test Hits@20: 0.1801 | Best Val: 0.3320 (epoch 300) | LR: 0.001250
+2025-11-11 03:38:44,229 - GCN-Improved Epoch 0390/500 | Loss: 0.3031 | Val Hits@20: 0.3372 | Test Hits@20: 0.1680 | Best Val: 0.3372 (epoch 390) | LR: 0.001250
+2025-11-11 03:38:52,938 - GCN-Improved Epoch 0395/500 | Loss: 0.3012 | Val Hits@20: 0.3044 | Test Hits@20: 0.1721 | Best Val: 0.3372 (epoch 390) | LR: 0.001250
+2025-11-11 03:39:01,609 - GCN-Improved Epoch 0400/500 | Loss: 0.3026 | Val Hits@20: 0.2868 | Test Hits@20: 0.1656 | Best Val: 0.3372 (epoch 390) | LR: 0.001250
+2025-11-11 03:39:10,318 - GCN-Improved Epoch 0405/500 | Loss: 0.3014 | Val Hits@20: 0.3100 | Test Hits@20: 0.1652 | Best Val: 0.3372 (epoch 390) | LR: 0.001250
+2025-11-11 03:39:19,070 - GCN-Improved Epoch 0410/500 | Loss: 0.3029 | Val Hits@20: 0.3118 | Test Hits@20: 0.1841 | Best Val: 0.3372 (epoch 390) | LR: 0.001250
+2025-11-11 03:39:27,767 - GCN-Improved Epoch 0415/500 | Loss: 0.3025 | Val Hits@20: 0.3291 | Test Hits@20: 0.1867 | Best Val: 0.3372 (epoch 390) | LR: 0.001250
+2025-11-11 03:39:36,527 - GCN-Improved Epoch 0420/500 | Loss: 0.3019 | Val Hits@20: 0.3080 | Test Hits@20: 0.1816 | Best Val: 0.3372 (epoch 390) | LR: 0.000625
+2025-11-11 03:39:45,174 - GCN-Improved Epoch 0425/500 | Loss: 0.2991 | Val Hits@20: 0.3026 | Test Hits@20: 0.1730 | Best Val: 0.3372 (epoch 390) | LR: 0.000625
+2025-11-11 03:39:53,839 - GCN-Improved Epoch 0430/500 | Loss: 0.3003 | Val Hits@20: 0.3056 | Test Hits@20: 0.1681 | Best Val: 0.3372 (epoch 390) | LR: 0.000625
+2025-11-11 03:40:02,564 - GCN-Improved Epoch 0435/500 | Loss: 0.2987 | Val Hits@20: 0.3175 | Test Hits@20: 0.1830 | Best Val: 0.3372 (epoch 390) | LR: 0.000625
+2025-11-11 03:40:11,188 - GCN-Improved Epoch 0440/500 | Loss: 0.2999 | Val Hits@20: 0.3332 | Test Hits@20: 0.1874 | Best Val: 0.3372 (epoch 390) | LR: 0.000625
+2025-11-11 03:40:19,848 - GCN-Improved Epoch 0445/500 | Loss: 0.2994 | Val Hits@20: 0.3060 | Test Hits@20: 0.1785 | Best Val: 0.3372 (epoch 390) | LR: 0.000625
+2025-11-11 03:40:28,510 - GCN-Improved Epoch 0450/500 | Loss: 0.2997 | Val Hits@20: 0.3158 | Test Hits@20: 0.1790 | Best Val: 0.3372 (epoch 390) | LR: 0.000313
+2025-11-11 03:40:37,189 - GCN-Improved Epoch 0455/500 | Loss: 0.2981 | Val Hits@20: 0.3058 | Test Hits@20: 0.1738 | Best Val: 0.3372 (epoch 390) | LR: 0.000313
+2025-11-11 03:40:45,834 - GCN-Improved Epoch 0460/500 | Loss: 0.2988 | Val Hits@20: 0.3067 | Test Hits@20: 0.1646 | Best Val: 0.3372 (epoch 390) | LR: 0.000313
+2025-11-11 03:40:54,533 - GCN-Improved Epoch 0465/500 | Loss: 0.3001 | Val Hits@20: 0.3176 | Test Hits@20: 0.1864 | Best Val: 0.3372 (epoch 390) | LR: 0.000313
+2025-11-11 03:41:03,170 - GCN-Improved Epoch 0470/500 | Loss: 0.2988 | Val Hits@20: 0.3302 | Test Hits@20: 0.1899 | Best Val: 0.3372 (epoch 390) | LR: 0.000313
+2025-11-11 03:41:11,782 - GCN-Improved Epoch 0475/500 | Loss: 0.2984 | Val Hits@20: 0.3293 | Test Hits@20: 0.1828 | Best Val: 0.3372 (epoch 390) | LR: 0.000313
+2025-11-11 03:41:20,529 - GCN-Improved Epoch 0480/500 | Loss: 0.2986 | Val Hits@20: 0.3243 | Test Hits@20: 0.1815 | Best Val: 0.3372 (epoch 390) | LR: 0.000156
+2025-11-11 03:41:29,229 - GCN-Improved Epoch 0485/500 | Loss: 0.2972 | Val Hits@20: 0.3200 | Test Hits@20: 0.1847 | Best Val: 0.3372 (epoch 390) | LR: 0.000156
+2025-11-11 03:41:37,973 - GCN-Improved Epoch 0490/500 | Loss: 0.2984 | Val Hits@20: 0.3229 | Test Hits@20: 0.1853 | Best Val: 0.3372 (epoch 390) | LR: 0.000156
+2025-11-11 03:41:46,629 - GCN-Improved Epoch 0495/500 | Loss: 0.2988 | Val Hits@20: 0.3182 | Test Hits@20: 0.1789 | Best Val: 0.3372 (epoch 390) | LR: 0.000156
+2025-11-11 03:41:55,307 - GCN-Improved Epoch 0500/500 | Loss: 0.2985 | Val Hits@20: 0.3079 | Test Hits@20: 0.1721 | Best Val: 0.3372 (epoch 390) | LR: 0.000156
+2025-11-11 03:41:55,307 - GCN-Improved FINAL: Best Val Hits@20 = 0.3372 | Test Hits@20 = 0.1680 (at epoch 390)
+2025-11-11 03:41:55,307 - 
+================================================================================
+2025-11-11 03:41:55,307 - FINAL RESULTS - IMPROVED GCN MODEL
+2025-11-11 03:41:55,307 - ================================================================================
+2025-11-11 03:41:55,307 - Configuration: Hidden Dim=256, Layers=4, Dropout=0.35
+2025-11-11 03:41:55,307 - 
+2025-11-11 03:41:55,307 - GCN-Improved:
+2025-11-11 03:41:55,308 -   Validation Hits@20: 0.3372
+2025-11-11 03:41:55,308 -   Test Hits@20: 0.1680
+2025-11-11 03:41:55,308 - ================================================================================
+2025-11-11 03:41:55,308 - 
+================================================================================
+2025-11-11 03:41:55,308 - Training and evaluation completed successfully!
+2025-11-11 03:41:55,308 - Results logged to: logs/results_20251111_032713.log
+2025-11-11 03:41:55,308 - ================================================================================
